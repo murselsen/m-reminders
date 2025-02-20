@@ -1,0 +1,76 @@
+@import url(./sidebar.css);
+
+body {
+  font-family: 'Varela Round', serif;
+  background-image: url('/public/image/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.row {
+  padding: 0;
+}
+.container {
+  padding: 0;
+  width: 1020px;
+  height: 696px;
+  border-radius: 12px;
+}
+
+#content {
+  background-color: rgba(40, 43, 43, 1);
+}
+.reminders-content {
+  padding: 60px 24px;
+  color: rgb(255, 255, 255);
+}
+.reminders-content .content-header {
+  margin-bottom: 33px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42.96px;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 0.3);
+}
+.reminders-content .content-statics-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.09px;
+  letter-spacing: -0.2px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.reminders-content .content-statics-text .content-statics-span {
+  margin-inline: 4px;
+}
+
+.reminders-content .content-statics-text .content-statics-link {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+}
+.reminders-content .content-statics-text .content-statics-link:hover {
+  color: rgb(255, 255, 255);
+}
+.reminders-content .reminders-list-area {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+}
+.reminders-content .reminders-list-area .reminder-area .remider-header {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23.87px;
+  letter-spacing: 0%;
+}
+.reminders-content .reminders-list-area .reminder-list {
+  display: flex;
+  flex-direction: column;
+  
+}
