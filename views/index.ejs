@@ -25,18 +25,20 @@
         <div class="row">
           <div class="col-12">
             <div class="reminders-content">
-              <h1 class="content-header">Tümü</h1>
+              <h1 class="content-header">TUMU</h1>
               <p class="content-statics-text">0 Görev Tamamlandı <span class="content-statics-span">⋅</span><button
                   class="content-statics-link">Temizle</button></p>
               <hr class="content-hr">
               <div class="reminders-list-area">
-                <div class="reminder-area">
-                  <h3 class="remider-header">Remiders</h3>
-                  <ul class="remider-list">
-                    <li class="remider-item done">
+                <div class="reminder-area" id="remidersArea">
+
+                  <h3 class="reminder-header">Remiders</h3>
+                  <ul class="reminder-list">
+                    <li class="reminder-item done">
                       <div class="remContent">
                         <label for="rem49387593" class="remCheckbox">
-                          <input type="checkbox" name="complete" id="rem49387593">
+                          <i class="fa-regular   fa-circle-check fa-2x" id="rem49387593circle"></i>
+                          <input type="checkbox" name="complete" hidden id="rem49387593">
                         </label>
                         <div class="remInfo">
                           <h4 class="title"> Todo 1</h4>
@@ -47,15 +49,15 @@
                             <span class="infoItem">Every 5 Days</span>
                           </div>
                           <div class="tagBox">
-                            <span class="tagItem">#design</span>
-                            <span class="tagItem">#code</span>
-                            <span class="tagItem">#javascript</span>
-                            <span class="tagItem">#express</span>
+                            <span class="tagItem">design</span>
+                            <span class="tagItem">code</span>
+                            <span class="tagItem">javascript</span>
+                            <span class="tagItem">express</span>
                           </div>
                         </div>
                         <div class="remActions">
-                          <button class=" fa-solid fa-trash"></button>
-                          <button class="fa-solid fa-pencil"></button>
+                          <button class="btn text-danger  fa-solid fa-trash"></button>
+                          <button class="btn  text-warning  fa-solid fa-pencil"></button>
                         </div>
                       </div>
                       <div class="remSplit">
@@ -63,40 +65,17 @@
                       </div>
                     </li>
                   </ul>
-                </div>
-                <div class="reminder-area">
-                  <h3 class="remider-header">Shopping</h3>
-                  <ul class="remider-list">
-                    <li class="remider-item done">
-                      <div class="remContent">
-                        <label for="rem49387593" class="remCheckbox">
-                          <input type="checkbox" name="complete" id="rem49387593">
-                        </label>
-                        <div class="remInfo">
-                          <h4 class="title"></h4>
-                          <p class="description"></p>
-                          <div class="infoBox">
-                            <span class="infoItem">30/10/2022</span>
-                            <span class="infoItem">3:00 PM</span>
-                            <span class="infoItem">Every 5 Days</span>
-                          </div>
-                          <div class="tagBox">
-                            <span class="tagItem">#design</span>
-                            <span class="tagItem">#code</span>
-                            <span class="tagItem">#javascript</span>
-                            <span class="tagItem">#express</span>
-                          </div>
-                        </div>
-                        <div class="remActions">
-                          <button class=" fa-solid fa-trash"></button>
-                          <button class="fa-solid fa-pencil"></button>
-                        </div>
+                  <div class="reminder-form-area">
+                    <form id="remidersAreaForm" class="reminder-form show">
+                      <i class="reminder-form-icon fa-solid fa-circle-chevron-right fa-2x flex-1"></i>
+                      <div class="reminder-form-group">
+                        <input type="text" name="title" class="form-input" placeholder="Title...">
+                        <input type="text" name="description" class="form-input " placeholder="Description...">
+                        <input type="date" name="date" class="form-input form-date">
+                        <input type="time" name="time" class=" form-input form-date">
                       </div>
-                      <div class="remSplit">
-                        <hr class="remSplitHr">
-                      </div>
-                    </li>
-                  </ul>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
