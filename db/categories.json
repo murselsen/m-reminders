@@ -2,10 +2,18 @@
   {
     "id": 1,
     "icon": "🔔",
-    "title": "Anımsatıcılar",
+    "title": "Reminders",
     "color": "#FF0000",
-    
+
     "pin": false
 
+  },
+  {
+    "id":2,
+    "icon": "🔔",
+    "title": "Shopping",
+    "color": "#FF0000",
+
+    "pin": false
   }
 ]

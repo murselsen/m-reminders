@@ -160,7 +160,7 @@ body {
   border-radius: 5px;
 }
 
-.reminders-content .reminders-list-area .reminder-list .reminder-item .remContent .infoBox .infoItem::after {
+.reminders-content .reminders-list-area .reminder-list .reminder-item .remContent .infoBox .infoItem:not(:last-child)::after {
   content: ',';
 }
 .reminders-content .reminders-list-area .reminder-list .reminder-item .remContent .tagBox .tagItem:hover {
