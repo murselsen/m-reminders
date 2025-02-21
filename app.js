@@ -9,7 +9,7 @@ app.use('/public', express.static('public'));
 app.use('/node', express.static('node_modules'));
 
 app.get('/', (req, res) => {
-
+  console.log(categories);
 
   res.render('index', { categories });
 });
