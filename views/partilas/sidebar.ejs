@@ -71,13 +71,13 @@
               <li class="categoryItem">
                 <div class="categoryItem-icon">
                   <span>
-                    <% category.icon %>
+                    <%= category.icon %>
                   </span>
                 </div>
                 <p class="categoryItem-text">
-                  Anımsatıcılar
+                  <%= category.title %>
                 </p>
-                <button class="categoryItem-button" id="categoryItem<% ca %>">
+                <button class="categoryItem-button" id="categoryItem<% category.id %>">
                   <i class=" fa-solid fa-map-pin"></i>
                 </button>
                 <span class="categoryItem-count">3</span>
