@@ -2,7 +2,9 @@ const categoryAddBtn = document.querySelector('#sidebarCategoryAddBtn');
 categoryAddBtn.addEventListener(
   'click',
   event => {
-    console.log(event.target.dataset.modal);
+    const modalID = this;
+    console.log('Modal ID:', modalID);
+    const modal = document.getElementById(modalID);
   },
   {
     passive: true,
