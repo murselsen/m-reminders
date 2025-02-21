@@ -67,22 +67,24 @@
         <div class="col-12">
           <h6 class="categoryList-header">Kategoriler</h6>
           <ul class="categoryList" id="categoryList">
-            <% for (let category in categories) %>
-            <li class="categoryItem">
-              <div class="categoryItem-icon">
-                <span>🔔</span>
-              </div>
-              <p class="categoryItem-text">
-                Anımsatıcılar
-              </p>
-              <button class="categoryItem-button">
-                <i class=" fa-solid fa-map-pin"></i>
-              </button>
-              <span class="categoryItem-count">3</span>
+            <% for (let category in categories) {%>
+              <li class="categoryItem">
+                <div class="categoryItem-icon">
+                  <span>
+                    <% category.icon %>
+                  </span>
+                </div>
+                <p class="categoryItem-text">
+                  Anımsatıcılar
+                </p>
+                <button class="categoryItem-button" id="">
+                  <i class=" fa-solid fa-map-pin"></i>
+                </button>
+                <span class="categoryItem-count">3</span>
 
-            </li>
-            <% } %>           
-             
+              </li>
+              <% } %>
+
           </ul>
         </div>
       </div> <!-- Categories -->
