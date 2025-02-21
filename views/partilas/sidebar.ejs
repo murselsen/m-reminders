@@ -67,11 +67,11 @@
         <div class="col-12">
           <h6 class="categoryList-header">Kategoriler</h6>
           <ul class="categoryList" id="categoryList">
-            <% for(let category in categories) {%>
+            <% categories.forEach((category)=> {%>
               <li class="categoryItem">
                 <div class="categoryItem-icon">
                   <span>
-                    <% category['icon'] %>
+                    <%= category['icon'] %>
                   </span>
                 </div>
                 <p class="categoryItem-text">
@@ -80,10 +80,10 @@
                 <button class="categoryItem-button" id="categoryItem<%= category.id %>">
                   <i class=" fa-solid fa-map-pin"></i>
                 </button>
-                <span class="categoryItem-count">3</span>
+                <span class="categoryItem-count">0</span>
 
               </li>
-              <% } %>
+              <% }) %>
 
           </ul>
         </div>
