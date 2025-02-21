@@ -3,17 +3,24 @@
     "id": 1,
     "icon": "🔔",
     "title": "Reminders",
-    "color": "#FF0000",
+    "color": "rgba(188, 208, 247, 1)",
 
     "pin": false
-
   },
   {
-    "id":2,
-    "icon": "🔔",
+    "id": 2,
+    "icon": "🛍",
     "title": "Shopping",
-    "color": "#FF0000",
+    "color": "rgba(247, 247, 188, 1)",
 
     "pin": false
-  }
+  },
+   {
+     "id": 3,
+     "icon": "💸",
+     "title": "Finances",
+     "color": "rgba(247, 247, 188, 1)",
+
+     "pin": false
+   }
 ]
