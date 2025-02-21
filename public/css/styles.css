@@ -221,3 +221,9 @@ body {
 .reminders-content .reminders-list-area .reminder-area .reminder-form-area .reminder-form .reminder-form-group .form-input:first-child {
   display: block;
 }
+
+.lightbox {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
