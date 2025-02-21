@@ -67,7 +67,7 @@
         <div class="col-12">
           <h6 class="categoryList-header">Kategoriler</h6>
           <ul class="categoryList" id="categoryList">
-            {% for category in categories %}
+            <% for (let category in categories) %>
             <li class="categoryItem">
               <div class="categoryItem-icon">
                 <span>🔔</span>
@@ -81,7 +81,7 @@
               <span class="categoryItem-count">3</span>
 
             </li>
-                         
+            <% } %>           
              
           </ul>
         </div>
