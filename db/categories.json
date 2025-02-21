@@ -1,5 +1,11 @@
 [
   {
-    "id": 1
+    "id": 1,
+    "icon": "🔔",
+    "title": "Anımsatıcılar",
+    "color": "#FF0000",
+    
+    "pin": false
+
   }
 ]
