@@ -15,12 +15,20 @@
 
     "pin": false
   },
-   {
-     "id": 3,
-     "icon": "💸",
-     "title": "Finances",
-     "color": "rgba(247, 247, 188, 1)",
+  {
+    "id": 3,
+    "icon": "💸",
+    "title": "Finanace",
+    "color": "rgba(199, 243, 207, 1)",
 
-     "pin": false
-   }
+    "pin": false
+  },
+  {
+    "id": 4,
+    "icon": "💖",
+    "title": "Design",
+    "color": "rgba(250, 223, 248, 1)",
+
+    "pin": false
+  }
 ]
