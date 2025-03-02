@@ -16,25 +16,17 @@
                 <label for="todoTime" class="todoFormLabel">
                     <b>Saat:</b> <input type="time" name="time" id="todoTime" class="formInput">
                 </label>
-                <label for="todoCategory" class="todoFormLabel">
-                    <b>Kategori:</b>
-                    <select name="category" id="todoCategory" class="formInput">
-                        <% categories.forEach((category)=> {%>
-                            <option value="<%= category.id %>">
-                                <%= category.icon %> | <%= category.title %>
-                            </option>
-                            <% }) %>
-                    </select>
-                </label>
+               
             </div>
             <div class="todoFormActionGroup">
                 <button class="formButton btn btn-danger" type="button">
                     <i class="fa-solid fa-times"></i> | Çık
                 </button>
                 <button class="formButton btn btn-warning" type="reset">
-                    <i class="fa-solid fa-reload"></i> | Sıfırla
+                    <i class="fa-solid fa-refresh"></i> | Sıfırla
                 </button>
-                <button class="formButton btn" type="submit"><i class="fa-solid fa-send"></i> | Sıfırla</button>
+                <button class="formButton btn btn-success" type="submit"><i class="fa-solid fa-paper-plane"></i> |
+                    Oluştur</button>
             </div>
         </form>
     </div>

@@ -34,7 +34,10 @@
   display: flex;
   gap: 15px;
 }
-
+.todoFormLabel b {
+  width: 11%;
+  text-align: right;
+}
 .todoFormLabel .formInput {
   width: 100%;
   background: transparent;
@@ -45,6 +48,7 @@
   line-height: 19.09px;
   letter-spacing: 0%;
   padding: 5px;
+  border-bottom: 3px solid black;
 }
 
 .todoFormLabel .formInput:focus {
