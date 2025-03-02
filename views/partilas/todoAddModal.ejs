@@ -1,9 +1,21 @@
 <div class="modalWrapper">
     <div class="todoFormContainer">
-        <form action="#" method="post">
-            <label for="todoTitle">
-                <b></b>><input type="text" name="title" id="todoTitle" placeholder="Title..." class="formInput">
+        <form class="todoForm" action="#" method="post">
+            <label for="todoTitle" class="todoFormLabel">
+                <b>Başlık:</b> <input type="text" name="title" id="todoTitle" placeholder="Title..." class="formInput">
             </label>
+            <label for="todoDescription" class="todoFormLabel">
+                <b>Açıklama:</b> <textarea name="description" id="todoDescription" placeholder="Description..."
+                    class="formTextarea"></textarea>
+            </label>
+            <div class="todoFormLabelGroup">
+                <label for="todoDate">
+                    <b>Tarih:</b> <input type="date" name="date" id="todoDate" class="formInput">
+                </label>
+                <label for="todoTime">
+                    <b>Saat:</b> <input type="time" name="time" id="todoTime" class="formInput">
+                </label>
+            </div>
         </form>
     </div>
 </div>
