@@ -32,6 +32,11 @@
 
 .todoFormContainer .todoForm .todoFormLabelGroup {
   display: flex;
+  gap: 20px;
+}
+
+.todoFormContainer .todoForm .todoFormLabelGroup .todoFormLabel {
+  border: 1px solid black;
 }
 
 .todoFormLabel .formInput {
