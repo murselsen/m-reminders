@@ -2,9 +2,10 @@
 
 body {
   font-family: 'Varela Round', serif;
-  background-image: url('/public/image/bg.png');
+  background-image: url('/public/image/bg2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +24,7 @@ body {
 }
 
 #content {
-  background-color: rgba(40, 43, 43, 1);
+  background-color: rgb(18, 212, 212);
 }
 
 .reminders-content {
