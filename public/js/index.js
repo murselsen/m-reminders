@@ -9,6 +9,11 @@ categoryAddBtn.addEventListener(
   },
 );
 
+const todoAddModalCloseButton = document.querySelector(
+  
+)
+
+
 const remidersAreaForm = document.querySelector('#remindersAreaForm');
 const remidersFormTitle = document.querySelector('#title');
 remidersFormTitle.addEventListener('input', e => {});
