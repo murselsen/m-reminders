@@ -9,10 +9,10 @@ app.use('/node', express.static('node_modules'));
 
 app.get('/', async (req, res) => {
   res.render('index', {
-    categories: await getCategories(),
+    categories1: await getCategories(),
   });
 });
 
 app.listen(port, () => {
-  console.log(`Listening on port --- ${port}`);
+  console.log(`Listening on port ${port}`);
 });
