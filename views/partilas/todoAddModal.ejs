@@ -5,15 +5,15 @@
                 <b>Başlık:</b> <input type="text" name="title" id="todoTitle" placeholder="Title..." class="formInput">
             </label>
             <label for="todoDescription" class="todoFormLabel">
-                <b>Açıklama:</b> <textarea name="description" id="todoDescription" placeholder="Description..."
-                    class="formTextarea"></textarea>
+                <b>Açıklama:</b> <input name="description" id="todoDescription" placeholder="Description..."
+                    class="formInput">
             </label>
             <div class="todoFormLabelGroup">
-                <label for="todoDate">
+                <label for="todoDate" class="todoFormLabel">
                     <b>Tarih:</b> <input type="date" name="date" id="todoDate"
                         value="<%= new Date().toISOString().slice(0, 10) %>" class="formInput">
                 </label>
-                <label for="todoTime">
+                <label for="todoTime" class="todoFormLabel">
                     <b>Saat:</b> <input type="time" name="time" id="todoTime" class="formInput">
                 </label>
             </div>
