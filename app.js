@@ -9,7 +9,7 @@ app.use('/node', express.static('node_modules'));
 
 app.get('/', async (req, res) => {
   res.render('index', {
-    categories1: await getCategories(),
+    categories: await getCategories(),
   });
 });
 
