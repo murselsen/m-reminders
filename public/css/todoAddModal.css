@@ -1,3 +1,6 @@
+#todoAddFormModal {
+  display: none;
+}
 .modalWrapper {
   position: absolute;
   top: 0;
