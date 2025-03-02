@@ -8,6 +8,16 @@
                 <b>Açıklama:</b> <input name="description" id="todoDescription" placeholder="Description..."
                     class="formInput">
             </label>
+            <label for="todoCategory" class="todoFormLabel">
+                <b>Kategori:</b>
+                <select name="category" id="todoCategory" class="formInput">
+                    <% categories.forEach((category)=> {%>
+                        <option value="<%= category.id %>">
+                            <%= category.icon %> | <%= category.title %>
+                        </option>
+                        <% }) %>
+                </select>
+            </label>
             <div class="todoFormLabelGroup">
                 <label for="todoDate" class="todoFormLabel">
                     <b>Tarih:</b> <input type="date" name="date" id="todoDate"
@@ -16,7 +26,7 @@
                 <label for="todoTime" class="todoFormLabel">
                     <b>Saat:</b> <input type="time" name="time" id="todoTime" class="formInput">
                 </label>
-               
+
             </div>
             <div class="todoFormActionGroup">
                 <button class="formButton btn btn-danger" type="button">

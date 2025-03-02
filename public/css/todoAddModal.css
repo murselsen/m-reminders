@@ -15,7 +15,6 @@
   background-color: rgba(255, 255, 255, 0.9);
   padding: 40px 30px;
   width: 800px;
-  max-height: 300px;
 }
 .todoFormContainer .todoForm {
   display: flex;
@@ -48,7 +47,7 @@
   line-height: 19.09px;
   letter-spacing: 0%;
   padding: 5px;
-  border-bottom: 3px solid black;
+  border-bottom: 1px solid black;
 }
 
 .todoFormLabel .formInput:focus {
@@ -58,9 +57,10 @@
 .todoFormContainer .todoForm .todoFormActionGroup {
   display: flex;
   gap: 15px;
+  margin-block: 20px 10px;
 }
 .todoFormActionGroup .formButton {
-  width: 100%;
+  width: 90%;
 }
 
 /* :not(:last-child)::after  */
