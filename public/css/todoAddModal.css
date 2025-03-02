@@ -32,7 +32,7 @@
 
 .todoFormContainer .todoForm .todoFormLabelGroup {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .todoFormLabel .formInput {
@@ -44,6 +44,7 @@
   font-size: 16px;
   line-height: 19.09px;
   letter-spacing: 0%;
+  padding: 5px;
 }
 
 .todoFormLabel .formInput:focus {
