@@ -18,7 +18,3 @@ const todoAddModalCloseButton = document.querySelector('#todoFormClose');
 todoAddModalCloseButton.addEventListener('click', e => {
   document.querySelector('#todoAddFormModal').style.display = 'none';
 });
-
-const remidersAreaForm = document.querySelector('#remindersAreaForm');
-const remidersFormTitle = document.querySelector('#title');
-remidersFormTitle.addEventListener('input', e => {});
