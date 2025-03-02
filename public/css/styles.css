@@ -109,6 +109,12 @@ body {
   flex-direction: column;
 }
 
+.reminders-content .reminders-list-area .reminder-list .reminder-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+  padding-inline: 10px;
+}
+
 .reminders-content .reminders-list-area .reminder-list .reminder-item .remContent {
   display: flex;
 }
@@ -213,6 +219,11 @@ body {
   color: white;
   display: none;
 }
+
+.reminders-content .reminders-list-area .reminder-area .reminder-form-area .reminder-form .reminder-form-group .form-input.form-date {
+  display: none;
+}
+
 .reminders-content .reminders-list-area .reminder-area .reminder-form-area .reminder-form .reminder-form-group .form-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
   letter-spacing: 1.5px;

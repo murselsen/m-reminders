@@ -68,11 +68,15 @@
                   <div class="reminder-form-area">
                     <form id="remidersAreaForm" class="reminder-form show">
                       <i class="reminder-form-icon fa-solid fa-circle-chevron-right fa-2x flex-1"></i>
-                      <div class="reminder-form-group">
-                        <input type="text" name="title" class="form-input" placeholder="Title...">
-                        <input type="text" name="description" class="form-input " placeholder="Description...">
-                        <input type="date" name="date" class="form-input form-date">
-                        <input type="time" name="time" class=" form-input form-date">
+                      <div class="reminder-form-group" id="reminder-form-group">
+                        <input type="text" name="title" class="form-input" id="title" placeholder="Title...">
+                        <input type="text" name="description" id="description" class="form-input"
+                          placeholder="Description..." />
+                        <div class="d-flex">
+                          <input type="date" name="date" id="date" value="<%= new Date().toISOString().slice(0, 10) %>"
+                            class="form-input form-date">
+                          <input type="time" name="time" id="time" class="form-input form-date">
+                        </div>
                       </div>
                     </form>
                   </div>
