@@ -1,20 +1,18 @@
-const express = require('express');
+import express from 'express';
+import { getCategories } from './controllers/index.js';
 const app = express();
 const port = 3000;
 app.set('view engine', 'ejs');
 
-const categories = require('./db/categories.json');
-
 app.use('/public', express.static('public'));
 app.use('/node', express.static('node_modules'));
 
-app.get('/', (req, res) => {
-  console.log(categories);
-
-  res.render('index', { categories });
+app.get('/', async (req, res) => {
+  res.render('index', {
+    categories: await getCategories(),
+  });
 });
 
 app.listen(port, () => {
-  console.log('Listening');
   console.log(`Listening on port ${port}`);
 });
