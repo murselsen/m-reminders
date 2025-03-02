@@ -50,3 +50,16 @@
 .todoFormLabel .formInput:focus {
   border-bottom: 3px solid black;
 }
+
+.todoFormContainer .todoForm .todoFormActionGroup {
+  display: flex;
+  gap: 15px;
+}
+.todoFormActionGroup .formButton {
+  width: 100%;
+}
+
+/* :not(:last-child)::after  */
+.todoFormActionGroup:not(:last-child)::after {
+  content: '|';
+}
