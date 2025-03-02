@@ -1,5 +1,5 @@
 @import url(./sidebar.css);
-
+@import url(./todoAddModal.css);
 body {
   font-family: 'Varela Round', serif;
   background-image: url('/public/image/bg2.jpg');
@@ -111,8 +111,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
- 
 
 .reminders-content .reminders-list-area .reminder-list .reminder-item .remContent {
   display: flex;

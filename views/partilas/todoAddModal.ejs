@@ -10,7 +10,8 @@
             </label>
             <div class="todoFormLabelGroup">
                 <label for="todoDate">
-                    <b>Tarih:</b> <input type="date" name="date" id="todoDate" class="formInput">
+                    <b>Tarih:</b> <input type="date" name="date" id="todoDate"
+                        value="<%= new Date().toISOString().slice(0, 10) %>" class="formInput">
                 </label>
                 <label for="todoTime">
                     <b>Saat:</b> <input type="time" name="time" id="todoTime" class="formInput">
