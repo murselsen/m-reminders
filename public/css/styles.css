@@ -24,7 +24,9 @@ body {
 }
 
 #content {
-  background-color: rgb(18, 212, 212);
+  background-color: rgba(40, 43, 43, 1);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .reminders-content {
@@ -110,11 +112,7 @@ body {
   flex-direction: column;
 }
 
-.reminders-content .reminders-list-area .reminder-list .reminder-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding-top: 10px;
-  padding-inline: 10px;
-}
+ 
 
 .reminders-content .reminders-list-area .reminder-list .reminder-item .remContent {
   display: flex;
