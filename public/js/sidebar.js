@@ -15,4 +15,5 @@
 
               </li>
                */
-console.log(document);
+document.addEventListener('DOMContentLoaded', doc => {});
+console.log(this);
