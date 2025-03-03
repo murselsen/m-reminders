@@ -15,8 +15,4 @@
 
               </li>
                */
-
-import { getCategories } from './controllers/index.js';
-const categories = await getCategories();
-const categoryList = document.querySelector('.categoryList');
-console.log('Categories', categories);
+console.log(document);
