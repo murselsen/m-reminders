@@ -40,7 +40,7 @@
                       <li class="reminder-item">
                         <div class="remContent">
                           <label for="rem<%= todo.id %>" class="remCheckbox">
-                            <i class="fa-regular   <%= todo.complete ? "fa-circle-check" : "fa-circle" %> fa-2x"
+                            <i class="fa-regular <%= todo.complete ? "fa-circle-check" : "fa-circle" %> fa-2x"
                               id="rem<%= todo.id %>circle"></i>
                             <input type="checkbox" name="complete" hidden id="rem<%= todo.id %>">
                           </label>
@@ -74,7 +74,7 @@
                             </div>
                           </div>
                           <div class="remActions">
-                            <button class="btn text-danger  fa-solid fa-trash"></button>
+                            <button class="btn text-danger fa-solid fa-trash" onlick="todoTrashById"></button>
                             <button class="btn  text-warning  fa-solid fa-pencil"></button>
                           </div>
                         </div>
