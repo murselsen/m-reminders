@@ -18,8 +18,9 @@ app.get('/', async (req, res) => {
   });
 });
 
-app.get('index?category=$1', async (req, res) => {
+app.get('/index?category=:category', async (req, res) => {
   console.log(req.params);
+  res.render('index');
 });
 
 app.listen(port, () => {
