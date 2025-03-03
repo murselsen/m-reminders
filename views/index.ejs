@@ -38,7 +38,7 @@
                       <li class="reminder-item done">
                         <div class="remContent">
                           <label for="rem<%= todo.id %>" class="remCheckbox">
-                            <i class="fa-regular   <% todo.complete ? " fa-circle-check" : "fa-circle" %> fa-2x"
+                            <i class="fa-regular   <%= todo.complete ? " fa-circle-check" : "fa-circle" %> fa-2x"
                               id="rem<%= todo.id %>circle"></i>
                             <input type="checkbox" name="complete" hidden id="rem<%= todo.id %>">
                           </label>

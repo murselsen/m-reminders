@@ -18,6 +18,9 @@ app.get('/', async (req, res) => {
   });
 });
 
+app.get('index?category=', async (req, res) => {});
+
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
