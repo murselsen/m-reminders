@@ -9,11 +9,11 @@ const getCategories = async () => {
 
   const todos = [];
 
-  dbCategories.forEach((todo, index) => {
-    // console.log('Category:', todo.category);
-    const keyCategory = todo.category;
-    const categorys = dbCategories.filter(cat => cat.title === keyCategory);
-    console.log(`Todo - Category: ${keyCategory} = `, categorys);
+  dbCategories.forEach((category, index) => {
+    console.log('Category:', category.title);
+    // const keyCategory = todo.category;
+    // const categorys = dbCategories.filter(cat => cat.title === keyCategory);
+    // console.log(`Todo - Category: ${keyCategory} = `, categorys);
   });
 
   // console.log('Categories:', dbCategories);
