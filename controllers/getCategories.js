@@ -10,14 +10,14 @@ const getCategories = async () => {
   const categories = [];
 
   dbTodos.forEach((todo, index) => {
-    console.log('Category:', todo.category);
+    // console.log('Category:', todo.category);
     const keyCategory = todo.category;
-    const category = categories.find(cat => cat.title === keyCategory);
-    console.log('Todo - Category:', category);
+    const categorys = dbCategories.filter(cat => cat.title === keyCategory);
+    console.log('Todo - Category:``, categorys);
   });
 
-  console.log('Categories:', dbCategories);
-  console.log('Todos:', dbTodos);
+  // console.log('Categories:', dbCategories);
+  // console.log('Todos:', dbTodos);
   return dbCategories;
 };
 export default getCategories;
