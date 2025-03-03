@@ -15,6 +15,4 @@ todoAddModalActiveButton.addEventListener('click', e => {
 });
 
 
-const delTodoById = async (id) => { 
-  location.href = `/delete/${id}`;
-};
+ 
