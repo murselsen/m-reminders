@@ -19,16 +19,17 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/category/:category', async (req, res) => {
-  console.log(req);
-  const todos = await getTodosByCategory();
-  console.log('Todos: ', todos);
+  const todos = await getTodosByCategory(req.params.category);
   const categories = await getCategories();
   const tags = await getTags();
   res.render('index', {
     todos: todos || [],
+    byCategoryTitle: req.params.category,
+    byCa
     categories: categories,
     tags: tags,
   });
+  console.log(req.params);
 });
 
 app.listen(port, () => {
