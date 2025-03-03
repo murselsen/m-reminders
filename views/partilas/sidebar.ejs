@@ -47,8 +47,8 @@
           <ul class="categoryList" id="categoryList">
             <% categories.forEach((category)=> {%>
               <li class="categoryItem">
-                <div class="categoryItem-icon">
-                  <span>
+                <div class="categoryItem-icon" style="background-color:<%= category['color'] %>">
+                    <span>
                     <%= category['icon'] %>
                   </span>
                 </div>

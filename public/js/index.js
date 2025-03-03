@@ -13,8 +13,3 @@ const todoAddModalActiveButton = document.querySelector('.form-input.title');
 todoAddModalActiveButton.addEventListener('click', e => {
   document.querySelector('#todoAddFormModal').style.display = 'flex';
 });
-
-const todoAddModalCloseButton = document.querySelector('#todoFormClose');
-todoAddModalCloseButton.addEventListener('click', e => {
-  document.querySelector('#todoAddFormModal').style.display = 'none';
-});
