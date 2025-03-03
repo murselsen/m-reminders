@@ -1,5 +1,5 @@
 import getCategories from './getCategories.js';
 import getTags from './getTags.js';
-
+import getTodos from './getTodos.js';
 // Exports the functions
-export { getCategories, getTags };
+export { getTodos, getCategories, getTags };
