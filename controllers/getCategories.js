@@ -7,6 +7,8 @@ const getCategories = async () => {
   dbCategories = JSON.parse(dbCategories);
   dbTodos = JSON.parse(dbTodos);
 
+  const categories = [];
+
   
 
   console.log('Categories:', dbCategories);
