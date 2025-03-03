@@ -32,7 +32,7 @@
               <div class="reminders-list-area">
                 <div class="reminder-area" id="remidersArea">
 
-                  <h3 class="reminder-header">Remiders</h3>
+                  <!-- <h3 class="reminder-header">Remiders</h3> -->
                   <ul class="reminder-list">
                     <% todos.forEach(todo=> { %>
                       <li class="reminder-item done">
@@ -55,17 +55,20 @@
                                   <%= todo.date %>
                                 </span>
                                 <% } %>
-                                <% if(todo.time){ %>
-                                  <span class="infoItem">
-                                    <%= todo.date %>
-                                  </span>
-                                  <% } %>
+                                  <% if(todo.time){ %>
+                                    <span class="infoItem">
+                                      <%= todo.time %>
+                                    </span>
+                                    <% } %>
                             </div>
                             <div class="tagBox">
-                              <span class="tagItem">design</span>
-                              <span class="tagItem">code</span>
-                              <span class="tagItem">javascript</span>
-                              <span class="tagItem">express</span>
+                              <% if(todo.tags){ %>
+                                <% todo.tags.forEach(tag=>{ %>
+                                  <span class="tagItem">
+                                    <%= tag %>
+                                  </span>
+                                  <% }) %>
+                                    <% } %>
                             </div>
                           </div>
                           <div class="remActions">

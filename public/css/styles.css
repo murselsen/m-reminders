@@ -73,6 +73,7 @@ body {
   flex-direction: column;
   gap: 15px;
   overflow-y: auto;
+  max-height: 525px;
 }
 
 .reminders-content .reminders-list-area::-webkit-scrollbar-track {
