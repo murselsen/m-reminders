@@ -1,5 +1,5 @@
 import express from 'express';
-import { getTodos, getCategories, getTags } from './controllers/index.js';
+import { getTodos, getCategories, getTags, getTodosByCategory } from './controllers/index.js';
 const app = express();
 const port = 3000;
 app.set('view engine', 'ejs');
@@ -18,9 +18,17 @@ app.get('/', async (req, res) => {
   });
 });
 
-app.get('/?category=:category', async (req, res) => {
-  console.log(req.params);
-  res.render('index');
+app.get('/category/:category', async (req, res) => {
+  console.log(req);
+  const todos = await getTodosByCategory();
+  console.log('Todos: ', todos);
+  const categories = await getCategories();
+  const tags = await getTags();
+  res.render('index', {
+    todos: todos || [],
+    categories: categories,
+    tags: tags,
+  });
 });
 
 app.listen(port, () => {
