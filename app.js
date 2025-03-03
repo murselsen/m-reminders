@@ -13,12 +13,31 @@ app.get('/', async (req, res) => {
   const tags = await getTags();
   res.render('index', {
     todos: todos,
+    byCategory: {
+      title: 'All',
+      description: 'All Todos',
+      color: 'rgb(0,0,0,1)',
+    },
     categories: categories,
     tags: tags,
   });
 });
 
 app.get('/category/:category', async (req, res) => {
+  const todos = await getTodosByCategory(req.params.category);
+  const category = await getCategory(req.params.category);
+  const categories = await getCategories();
+  const tags = await getTags();
+  res.render('index', {
+    todos: todos || [],
+    byCategory: category,
+    categories: categories,
+    tags: tags,
+  });
+  console.log(req.params);
+});
+
+app.get('/tags/:tag', async (req, res) => {
   const todos = await getTodosByCategory(req.params.category);
   const category = await getCategory(req.params.category);
   const categories = await getCategories();

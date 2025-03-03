@@ -1,6 +1,6 @@
 {
   "name": "m-reminders",
-  "version": "1.1.0",
+  "version": "1.1.9",
   "description": "A reminder application",
   "license": "ISC",
   "author": "Mürsel ŞEN",
@@ -14,7 +14,8 @@
     "bootstrap": "^5.3.3",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "fontawesome": "^5.6.3"
+    "fontawesome": "^5.6.3",
+    "vite": "^6.2.0"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "application",
     "nodejs",
     "express"
-  ]
+  ],
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }

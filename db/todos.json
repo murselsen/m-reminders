@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Buy milk",
-    "description": "Buy 1lt milk from the market",
-    "date": "2022-12-31",
-    "time": "10:00",
-    "tags": ["shopping", "home"],
-    "completed": true,
-    "category": "Personal"
-  },
-  {
     "id": 2,
     "title": "Finish project report",
     "description": "Complete the final report for the project",
