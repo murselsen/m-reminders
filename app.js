@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
   });
 });
 
-app.get('index?category=$1', async (req, res) => {
+app.get('?category=$1', async (req, res) => {
   console.log(req.params);
 });
 

@@ -46,7 +46,7 @@
           <h6 class="categoryList-header">Kategoriler</h6>
           <ul class="categoryList" id="categoryList">
             <% categories.forEach((category)=> {%>
-              <li class="categoryItem" onclick="location.href='index?category=<%= category.title.toLowerCase() %>'">
+              <li class="categoryItem" onclick="location.href='?category=<%= category.title.toLowerCase() %>'">
                 <div class="categoryItem-icon" style="background-color:<%= category['color'] %>">
                   <span>
                     <%= category['icon'] %>
