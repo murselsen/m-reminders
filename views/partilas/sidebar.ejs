@@ -72,15 +72,13 @@
         <div class="col-12">
           <h6 class="tagList-header">Etiketler</h6>
           <ul class="tagList">
-            <li class="tagItem">
-              <a href="index?tag=All" class="tagLink"> Tümü </a>
-            </li>
-            <li class="tagItem">
-              <a href="index?tag=Design" class="tagLink"> Tasarım </a>
-            </li>
-            <li class="tagItem">
-              <a href="index?tag=SF-Project" class="tagLink"> SF Projesi </a>
-            </li>
+            <% tags.forEach(tag=> {%>
+              <li class="tagItem">
+                <a href="index?tag=<%= tag %>" class="tagLink">
+                  <%= tag %>
+                </a>
+              </li>
+              <%}) %>
           </ul>
         </div>
       </div> <!-- Tags -->

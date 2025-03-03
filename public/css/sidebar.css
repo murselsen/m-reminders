@@ -207,6 +207,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  row-gap: 16px;
 }
 .tagList .tagItem .tagLink {
   width: 100%;
@@ -220,6 +221,7 @@
   padding: 4px 8px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 6px;
+  text-transform: capitalize;
 }
 
 .sidebar .sidebarBtn {
