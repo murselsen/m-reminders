@@ -50,9 +50,11 @@
                               <%= todo.description %>
                             </p>
                             <div class="infoBox">
-                              <%= todo.date ? %>
-                              <span class="infoItem">30/10/2022</span>
-                               <% >
+                              <% if(todo.date){ %>
+                                <span class="infoItem">
+                                  <%= todo.date%>
+                                </span>
+                                <% } %>
                             </div>
                             <div class="tagBox">
                               <span class="tagItem">design</span>
