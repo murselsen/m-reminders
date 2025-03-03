@@ -1,5 +1,5 @@
 import express from 'express';
-import { getTodos, getCategories, getTags, getTodosByCategory,getCategory } from './controllers/index.js';
+import { getTodos, getCategories, getTags, getTodosByCategory, getCategory } from './controllers/index.js';
 const app = express();
 const port = 3000;
 app.set('view engine', 'ejs');
@@ -25,8 +25,7 @@ app.get('/category/:category', async (req, res) => {
   const tags = await getTags();
   res.render('index', {
     todos: todos || [],
-    byCategoryTitle: req.params.category,
-
+    byCategory: category,
     categories: categories,
     tags: tags,
   });

@@ -6,7 +6,7 @@
     "date": "2022-12-31",
     "time": "10:00",
     "tags": ["shopping", "home"],
-    "completed": false,
+    "completed": true,
     "category": "Personal"
   },
   {
@@ -76,7 +76,7 @@
     "date": "2023-01-08",
     "time": "09:00",
     "tags": ["health", "appointment"],
-    "completed": false,
+    "completed": true,
     "category": "Health"
   },
   {

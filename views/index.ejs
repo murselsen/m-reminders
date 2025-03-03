@@ -25,8 +25,8 @@
         <div class="row">
           <div class="col-12">
             <div class="reminders-content">
-              <h1 class="content-header">
-                <%= byCategoryTitle %>
+              <h1 class="content-header" style="color: <%= byCategory.color %>">
+                <%= byCategory.title %>
               </h1>
               <p class="content-statics-text">0 Görev Tamamlandı <span class="content-statics-span">⋅</span><button
                   class="content-statics-link">Temizle</button></p>
@@ -37,10 +37,10 @@
                   <!-- <h3 class="reminder-header">Remiders</h3> -->
                   <ul class="reminder-list">
                     <% todos.forEach(todo=> { %>
-                      <li class="reminder-item done">
+                      <li class="reminder-item">
                         <div class="remContent">
                           <label for="rem<%= todo.id %>" class="remCheckbox">
-                            <i class="fa-regular   <%= todo.complete ? " fa-circle-check" : "fa-circle" %> fa-2x"
+                            <i class="fa-regular   <%= todo.complete ? "fa-circle-check" : "fa-circle" %> fa-2x"
                               id="rem<%= todo.id %>circle"></i>
                             <input type="checkbox" name="complete" hidden id="rem<%= todo.id %>">
                           </label>
