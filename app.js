@@ -1,5 +1,5 @@
 import express from 'express';
-import { getCategories } from './controllers/index.js';
+import { getCategories, getTags } from './controllers/index.js';
 const app = express();
 const port = 3000;
 app.set('view engine', 'ejs');
@@ -9,8 +9,10 @@ app.use('/node', express.static('node_modules'));
 
 app.get('/', async (req, res) => {
   const categories = await getCategories();
+  const tags = await getTags();
   res.render('index', {
     categories: categories,
+    tags: tags,
   });
 });
 
