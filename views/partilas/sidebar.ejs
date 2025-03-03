@@ -58,7 +58,9 @@
                 <button class="categoryItem-button" id="categoryItem<%= category.id %>">
                   <i class=" fa-solid fa-map-pin"></i>
                 </button>
-                <span class="categoryItem-count">0</span>
+                <span class="categoryItem-count">
+                  <%= category.count %>
+                </span>
 
               </li>
               <% }) %>

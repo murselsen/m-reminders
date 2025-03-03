@@ -7,17 +7,18 @@ const getCategories = async () => {
   dbCategories = JSON.parse(dbCategories);
   dbTodos = JSON.parse(dbTodos);
 
-  const todos = [];
+  const categories = [];
 
   dbCategories.forEach((category, index) => {
-    console.log('Category:', category.title);
-    // const keyCategory = todo.category;
-    // const categorys = dbCategories.filter(cat => cat.title === keyCategory);
-    // console.log(`Todo - Category: ${keyCategory} = `, categorys);
+    // console.log('Category:', category.title, dbTodos.filter(todo => todo.category === category.title).length);
+    categories.push({
+      ...category,
+      count: dbTodos.filter(todo => todo.category === category.title).length,
+    });
   });
 
   // console.log('Categories:', dbCategories);
   // console.log('Todos:', dbTodos);
-  return dbCategories;
+  return categories;
 };
 export default getCategories;

@@ -1,33 +1,5 @@
 [
   {
-    "id": 1,
-    "icon": "🔔",
-    "title": "Reminders",
-    "color": "rgba(188, 208, 247, 1)",
-    "pin": false
-  },
-  {
-    "id": 2,
-    "icon": "🛍",
-    "title": "Shopping",
-    "color": "rgba(247, 247, 188, 1)",
-    "pin": false
-  },
-  {
-    "id": 3,
-    "icon": "💸",
-    "title": "Finanace",
-    "color": "rgba(199, 243, 207, 1)",
-    "pin": false
-  },
-  {
-    "id": 4,
-    "icon": "💖",
-    "title": "Design",
-    "color": "rgba(250, 223, 248, 1)",
-    "pin": false
-  },
-  {
     "id": 5,
     "icon": "🧑🏻",
     "title": "Personal",
