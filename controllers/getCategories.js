@@ -9,7 +9,9 @@ const getCategories = async () => {
 
   const categories = [];
 
-  
+  dbTodos.forEach(todo, index => {
+    console.log('Category:', todo.);
+  });
 
   console.log('Categories:', dbCategories);
   console.log('Todos:', dbTodos);
