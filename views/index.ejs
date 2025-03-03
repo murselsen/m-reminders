@@ -44,13 +44,15 @@
                           </label>
                           <div class="remInfo">
                             <h4 class="title">
-                                  <%= todo.id %>
+                              <%= todo.title %>
                             </h4>
-                            <p class="description">Todo 1 - Description</p>
+                            <p class="description">
+                              <%= todo.description %>
+                            </p>
                             <div class="infoBox">
+                              <%= todo.date ? %>
                               <span class="infoItem">30/10/2022</span>
-                              <span class="infoItem">3:00 PM</span>
-                              <span class="infoItem">Every 5 Days</span>
+                               <% >
                             </div>
                             <div class="tagBox">
                               <span class="tagItem">design</span>
