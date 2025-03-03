@@ -13,3 +13,8 @@ const todoAddModalActiveButton = document.querySelector('.form-input.title');
 todoAddModalActiveButton.addEventListener('click', e => {
   document.querySelector('#todoAddFormModal').style.display = 'flex';
 });
+
+
+const delTodoById = async (id) => { 
+  location.href = `/delete/${id}`;
+};
