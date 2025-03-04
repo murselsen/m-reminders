@@ -1,16 +1,16 @@
 {
   "name": "m-reminders",
-  "version": "1.1.72",
+  "version": "1.1.95",
   "description": "A reminder application",
   "license": "ISC",
   "author": "Mürsel ŞEN",
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "build": "webpack --mode production",
-    "serve": "webpack serve --mode development"
+    "start": "node app.js", // Uygulamayı başlat
+    "dev": "nodemon app.js", // Nodemon ile geliştirme modunda başlat
+    "build": "vite build", // Vite ile üretim modunda derle
+    "serve": "vite" // Vite ile geliştirme sunucusunu başlat
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -31,13 +31,6 @@
   ],
   "devDependencies": {
     "gh-pages": "^6.3.0",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.1",
-    "babel-loader": "^8.2.3",
-    "style-loader": "^3.3.1",
-    "css-loader": "^6.5.1",
-    "@babel/core": "^7.16.5",",
-    "@babel/preset-env": "^7.16.5"16.5"
+    "vite-plugin-ejs": "^1.7.0"
   }
 }
