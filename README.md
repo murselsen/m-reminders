@@ -48,9 +48,22 @@ npm run dev
 npm run start:server
 ```
 
+6. Uygulamayı build edin:
+
+```bash
+npm run build
+```
+
 ## Kullanım
 
 Uygulama başlatıldıktan sonra, tarayıcınızda `http://localhost:3000` adresine
+giderek uygulamayı kullanabilirsiniz. API istekleri için `http://localhost:3001`
+adresini kullanabilirsiniz.
+
+## Katkıda Bulunma
+
+Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue
+açın.
 
 ## Lisans
 
