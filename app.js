@@ -11,7 +11,7 @@ app.set('view engine', 'ejs'); // EJS görüntü motorunu ayarla
 app.set('views', path.join(__dirname, 'views')); // Görünüm klasörünü ayarla
 
 const vite = await createViteServer({
-  server: { middlewareMode: 'html' }, // Vite'ı ara yazılım modunda başlat
+  server: { middlewareMode: 'ejs' }, // Vite'ı ara yazılım modunda başlat
 });
 
 app.use(vite.middlewares); // Vite ara yazılımlarını kullan
@@ -62,6 +62,6 @@ app.get('/tags/:tag', async (req, res) => {
   console.log(req.params);
 });
 
-app.listen(3000, () => {
+app.listen(5173, () => {
   console.log('Server is running on http://localhost:3000'); // Sunucunun çalıştığını konsola yazdır
 });

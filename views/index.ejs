@@ -34,7 +34,7 @@
               <div class="reminders-list-area">
                 <div class="reminder-area" id="remidersArea">
 
-                  <!-- <h3 class="reminder-header">Remiders</h3> -->
+                  <!-- <h3 class="reminder-header">Reminders</h3> -->
                   <ul class="reminder-list">
                     <% todos.forEach(todo=> { %>
                       <li class="reminder-item" id="remTodo<%= todo.id %>">
@@ -65,7 +65,7 @@
                             </div>
                             <div class="tagBox">
                               <% if(todo.tags){ %>
-                                <% todo.tags.forEach(tag=>{ %>
+                                <% todo.tags.forEach(tag=> { %>
                                   <span class="tagItem">
                                     <%= tag %>
                                   </span>
@@ -76,7 +76,7 @@
                           <div class="remActions">
                             <button class="btn text-danger todo-del fa-solid fa-trash"
                               data-source="<%= todo.id %>"></button>
-                            <button class="btn  text-warning todo-edit fa-solid fa-pencil"
+                            <button class="btn text-warning todo-edit fa-solid fa-pencil"
                               data-source="<%= todo.id %>"></button>
                           </div>
                         </div>
@@ -91,7 +91,7 @@
                       <i class="reminder-form-icon fa-solid fa-circle-chevron-right fa-2x flex-1"></i>
                       <div class="reminder-form-group" id="reminder-form-group">
                         <input type="text" name="title" class="form-input title" id="title" placeholder="Title...">
-                        <%- include("./partilas/todoAddModal.ejs") %>
+                        <%- include("./partials/todoAddModal.ejs") %>
                       </div>
                     </div>
                   </div>

@@ -1,9 +1,7 @@
 import { defineConfig } from 'vite'; // Vite yapılandırma fonksiyonunu içe aktar
-import { ViteEjsPlugin } from 'vite-plugin-ejs'; // EJS Vite eklentisini içe aktar
 
-import { defineConfig } from 'vite';
 import { glob } from 'glob';
-import injectHTML from 'vite-plugin-html-inject';
+import { ViteEjsPlugin } from 'vite-plugin-ejs'; // EJS Vite eklentisini içe aktar
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
@@ -42,8 +40,8 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true,
     },
     plugins: [
-      injectHTML(),
-      FullReload(['./src/**/**.html']),
+      ViteEjsPlugin(),
+      FullReload(['./**/**.ejs', './**/**.js', './**/**.css']),
       SortCss({
         sort: 'mobile-first',
       }),

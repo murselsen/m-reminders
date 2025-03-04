@@ -1,6 +1,6 @@
 {
   "name": "m-reminders",
-  "version": "1.1.111",
+  "version": "1.1.126",
   "description": "A reminder application",
   "license": "ISC",
   "author": "Mürsel ŞEN",
@@ -33,6 +33,9 @@
   ],
   "devDependencies": {
     "gh-pages": "^6.3.0",
-    "vite-plugin-ejs": "^1.7.0"
+    "postcss-sort-media-queries": "^5.2.0",
+    "vite-plugin-ejs": "^1.7.0",
+    "glob": "11.0.1",
+    "vite-plugin-full-reload": "^1.2.0"
   }
 }
