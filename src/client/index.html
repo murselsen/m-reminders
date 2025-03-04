@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reminders App</title>
-  <link rel="stylesheet" href="/node/bootstrap/dist/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,21 +14,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/public/css/root.css" />
-  <link rel="stylesheet" href="/public/css/styles.css" />
+  <link rel="stylesheet" href="./css/root.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
   <div class="container">
     <div class="row">
-      <aside class="col-4 p-0" id="sidebarPartial"><%- include("./partials/sidebar") %></aside>
+      <aside class="col-4 p-0" id="sidebarPartial">
+        <load src="partials/sidebar.html" />
+      </aside>
       <div class="col-8 p-0" id="content">
         <div class="row">
           <div class="col-12">
             <div class="reminders-content">
-              <h1 class="content-header" style="color: <%= byCategory.color %>">
-                <%= byCategory.title %>
-              </h1>
+              <h1 class="content-header" id="byCategoryHeader">Tümü</h1>
               <p class="content-statics-text">0 Görev Tamamlandı <span class="content-statics-span">⋅</span><button
                   class="content-statics-link">Temizle</button></p>
               <hr class="content-hr">
@@ -36,62 +37,52 @@
 
                   <!-- <h3 class="reminder-header">Reminders</h3> -->
                   <ul class="reminder-list">
-                    <% todos.forEach(todo=> { %>
-                      <li class="reminder-item" id="remTodo<%= todo.id %>">
-                        <div class="remContent">
-                          <label for="rem<%= todo.id %>" class="remCheckbox">
-                            <i class="fa-regular <%= todo.complete ? " fa-circle-check" : "fa-circle" %> fa-2x"
-                              id="rem<%= todo.id %>circle"></i>
-                            <input type="checkbox" name="complete" hidden id="rem<%= todo.id %>">
-                          </label>
-                          <div class="remInfo">
-                            <h4 class="title">
-                              <%= todo.title %>
-                            </h4>
-                            <p class="description">
-                              <%= todo.description %>
-                            </p>
-                            <div class="infoBox">
-                              <% if(todo.date){ %>
-                                <span class="infoItem">
-                                  <%= todo.date %>
-                                </span>
-                                <% } %>
-                                  <% if(todo.time){ %>
-                                    <span class="infoItem">
-                                      <%= todo.time %>
-                                    </span>
-                                    <% } %>
-                            </div>
-                            <div class="tagBox">
-                              <% if(todo.tags){ %>
-                                <% todo.tags.forEach(tag=> { %>
-                                  <span class="tagItem">
-                                    <%= tag %>
-                                  </span>
-                                  <% }) %>
-                                    <% } %>
-                            </div>
+
+                    <li class="reminder-item" id="remTodo0">
+                      <div class="remContent">
+                        <label for="rem0" class="remCheckbox">
+                          <i class="fa-regular   fa-circle-check   fa-2x" id="rem0circle"></i>
+                          <input type="checkbox" name="complete" hidden id="rem0">
+                        </label>
+                        <div class="remInfo">
+                          <h4 class="title">
+                            {TodoTitle}
+                          </h4>
+                          <p class="description">
+                            {TodoDescrption}
+                          </p>
+                          <div class="infoBox">
+
+                            <span class="infoItem">
+
+                            </span>
+
                           </div>
-                          <div class="remActions">
-                            <button class="btn text-danger todo-del fa-solid fa-trash"
-                              data-source="<%= todo.id %>"></button>
-                            <button class="btn text-warning todo-edit fa-solid fa-pencil"
-                              data-source="<%= todo.id %>"></button>
+                          <div class="tagBox">
+
+                            <span class="tagItem">
+                              {tag}
+                            </span>
+
                           </div>
                         </div>
-                        <div class="remSplit">
-                          <hr class="remSplitHr">
+                        <div class="remActions">
+                          <button class="btn text-danger todo-del fa-solid fa-trash" data-source="0"></button>
+                          <button class="btn text-warning todo-edit fa-solid fa-pencil" data-source="0"></button>
                         </div>
-                      </li>
-                      <% }); %>
+                      </div>
+                      <div class="remSplit">
+                        <hr class="remSplitHr">
+                      </div>
+                    </li>
+
                   </ul>
                   <div class="reminder-form-area">
                     <div id="remidersAreaForm" class="reminder-form show">
                       <i class="reminder-form-icon fa-solid fa-circle-chevron-right fa-2x flex-1"></i>
                       <div class="reminder-form-group" id="reminder-form-group">
                         <input type="text" name="title" class="form-input title" id="title" placeholder="Title...">
-                        <%- include("./partials/todoAddModal.ejs") %>
+
                       </div>
                     </div>
                   </div>
@@ -106,6 +97,7 @@
   </div>
 
   <script src="./js/index.js" type="module"></script>
+  <script src="./js/sidebar.js" type="module"></script>
 
 </body>
 

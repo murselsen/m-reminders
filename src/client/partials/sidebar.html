@@ -44,26 +44,26 @@
       <div class="row my-3">
         <div class="col-12">
           <h6 class="categoryList-header">Kategoriler</h6>
-          <ul class="categoryList" id="categoryList">
-            <% categories.forEach((category)=> {%>
-              <li class="categoryItem" onclick="location.href='/category/<%= category.title.toLowerCase() %>'">
-                <div class="categoryItem-icon" style="background-color:<%= category.color %>">
-                  <span>
-                    <%= category['icon'] %>
-                  </span>
-                </div>
-                <p class="categoryItem-text">
-                  <%= category.title %>
-                </p>
-                <button class="categoryItem-button" id="categoryItem<%= category.id %>">
-                  <i class=" fa-solid fa-map-pin"></i>
-                </button>
-                <span class="categoryItem-count">
-                  <%= category.count %>
-                </span>
+          <ul class="categoryList" id="sidebarCategoryList">
 
-              </li>
-              <% }) %>
+            <li class="categoryItem" onclick="location.href='0'">
+              <div class="categoryItem-icon" style="background-color:green">
+                <span>
+                  {icon}
+                </span>
+              </div>
+              <p class="categoryItem-text">
+                {title}
+              </p>
+              <button class="categoryItem-button" id="categoryItem0">
+                <i class=" fa-solid fa-map-pin"></i>
+              </button>
+              <span class="categoryItem-count">
+                {count}
+              </span>
+
+            </li>
+
 
           </ul>
         </div>
@@ -72,13 +72,13 @@
         <div class="col-12">
           <h6 class="tagList-header">Etiketler</h6>
           <ul class="tagList">
-            <% tags.forEach(tag=> {%>
-              <li class="tagItem">
-                <a href="index?tag=<%= tag %>" class="tagLink">
-                  <%= tag %>
-                </a>
-              </li>
-              <%}) %>
+
+            <li class="tagItem">
+              <a href="index?tag=0" class="tagLink">
+                {tag}
+              </a>
+            </li>
+
           </ul>
         </div>
       </div> <!-- Tags -->
