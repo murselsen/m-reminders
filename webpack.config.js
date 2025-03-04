@@ -22,7 +22,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'), // Serve content from the dist directory
+    static: path.join(__dirname, 'public/dist'), // Serve content from the dist directory
     compress: true, // Enable gzip compression
     port: 9000, // Port to run the development server
   },
