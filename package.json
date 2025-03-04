@@ -1,6 +1,6 @@
 {
   "name": "m-reminders",
-  "version": "1.1.63",
+  "version": "1.1.70",
   "description": "A reminder application",
   "license": "ISC",
   "author": "Mürsel ŞEN",
@@ -8,12 +8,13 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "webpack --mode production",
+    "serve": "webpack serve --mode development"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
     "ejs": "^3.1.10",
-    "express": "^4.21.2",
     "fontawesome": "^5.6.3",
     "vite": "^6.2.0",
     "webpack": "^5.98.0"
@@ -29,6 +30,7 @@
     "express"
   ],
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "webpack-cli": "^6.0.1"
   }
 }

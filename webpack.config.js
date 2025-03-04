@@ -1,13 +1,14 @@
-// webpack.config.js
 const path = require('path');
 
 module.exports = {
-  entry: './app.js',
+  entry: './src/index.js', // Entry point of your application
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'my-first-webpack.bundle.js',
+    filename: 'bundle.js', // Output bundle file
+    path: path.resolve(__dirname, 'dist'), // Output directory
   },
   module: {
-    rules: [{ test: /\.txt$/, use: 'raw-loader' }],
+    rules: [
+      {
   },
+  mode: 'development', //
 };
