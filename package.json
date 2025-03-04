@@ -1,6 +1,6 @@
 {
   "name": "m-reminders",
-  "version": "1.1.98",
+  "version": "1.1.111",
   "description": "A reminder application",
   "license": "ISC",
   "author": "Mürsel ŞEN",
@@ -11,7 +11,8 @@
     "dev": "nodemon app.js",
     "build": "vite build",
     "serve": "vite",
-    
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
