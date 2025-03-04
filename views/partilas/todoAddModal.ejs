@@ -50,5 +50,52 @@
             </div>
         </form>
 
+        <form class="todoForm" id="todoEditForm" action="#" method="post">
+            <h2 class="todoFormHeader"> - Düzenle</h2>
+            <label for="todoTitle" class="todoFormLabel">
+                <b>Başlık:</b> <input type="text" name="title" id="todoTitle" placeholder="Title..." class="formInput">
+            </label>
+            <label for="todoDescription" class="todoFormLabel">
+                <b>Açıklama:</b> <input name="description" id="todoDescription" placeholder="Description..."
+                    class="formInput">
+            </label>
+
+            <div class="todoFormLabelGroup">
+                <label for="todoDate" class="todoFormLabel">
+                    <b>Tarih:</b> <input type="date" name="date" id="todoDate"
+                        value="<%= new Date().toISOString().slice(0, 10) %>" class="formInput">
+                </label>
+                <label for="todoTime" class="todoFormLabel">
+                    <b>Saat:</b> <input type="time" name="time" id="todoTime" class="formInput">
+                </label>
+            </div>
+            <label for="todoCategory" class="todoFormLabel">
+                <b>Kategori:</b>
+                <select name="category" id="todoCategory" class="formInput">
+                    <% categories.forEach((category)=> {%>
+                        <option value="<%= category.id %>">
+                            <%= category.icon %> | <%= category.title %>
+                        </option>
+                        <% }) %>
+                </select>
+            </label>
+            <label for="todoTags" class="todoFormLabel">
+                <b>Etiketler:</b>
+                <input type="text" name="tags" id="todoTags" placeholder="item,item2,item3,item4" class="formInput">
+            </label>
+            <div class="todoFormActionGroup">
+                <button class="formButton btn btn-danger"
+                    onclick="document.querySelector('#todoAddFormModal').style.display = 'none'" type="button">
+                    <i class="fa-solid fa-times"></i> | Çık
+                </button>
+                <button class="formButton btn btn-warning" type="reset">
+                    <i class="fa-solid fa-refresh"></i> | Sıfırla
+                </button>
+                <button class="formButton btn btn-success" type="submit">
+                    <i class="fa-solid fa-paper-plane"></i> | Oluştur
+                </button>
+            </div>
+        </form>
+
     </div>
 </div>
