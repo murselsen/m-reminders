@@ -1,0 +1,114 @@
+<div class="sidebar d-flex flex-column  ">
+
+  <div class="row mb-3">
+    <div class="col-12">
+      <form class="sidebarForm" id="sidebarForm">
+        <i class="fa-solid fa-search"></i>
+        <input type="text" class="sidebarForm-input " placeholder="Search" name="todoSearch" id="todoSearch"></label>
+      </form>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12" id="badgeList">
+      <ul class="badgeList">
+
+        <li class="badgeItem">
+          <span class="badgeItem-span">
+            <div class="badgeItem-icon bg-info p-1">
+              <span><i class="fa-solid fa-clock"></i></span>
+            </div>
+            <p class="badgeItem-text">Bugün</p>
+          </span>
+          <span class="badgeItem-span">
+            <h2 class="badgeItem-count">5</h2>
+          </span>
+        </li>
+
+        <li class="badgeItem bg-dark text-white">
+          <span class="badgeItem-span ">
+            <div class="badgeItem-icon p-1 bg-light text-black">
+              <span>􀈤</span>
+            </div>
+            <p class="badgeItem-text ">Tümü</p>
+          </span>
+          <span class="badgeItem-span">
+            <h3 class="badgeItem-count">5</h3>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div> <!-- Badges -->
+
+  <div class="row">
+    <div class="col categoriesTagWrapper">
+      <div class="row my-3">
+        <div class="col-12">
+          <h6 class="categoryList-header">Kategoriler</h6>
+          <ul class="categoryList" id="categoryList">
+            <% categories.forEach((category)=> {%>
+              <li class="categoryItem" onclick="location.href='/category/<%= category.title.toLowerCase() %>'">
+                <div class="categoryItem-icon" style="background-color:<%= category.color %>">
+                  <span>
+                    <%= category['icon'] %>
+                  </span>
+                </div>
+                <p class="categoryItem-text">
+                  <%= category.title %>
+                </p>
+                <button class="categoryItem-button" id="categoryItem<%= category.id %>">
+                  <i class=" fa-solid fa-map-pin"></i>
+                </button>
+                <span class="categoryItem-count">
+                  <%= category.count %>
+                </span>
+
+              </li>
+              <% }) %>
+
+          </ul>
+        </div>
+      </div> <!-- Categories -->
+      <div class="row my-3">
+        <div class="col-12">
+          <h6 class="tagList-header">Etiketler</h6>
+          <ul class="tagList">
+            <% tags.forEach(tag=> {%>
+              <li class="tagItem">
+                <a href="index?tag=<%= tag %>" class="tagLink">
+                  <%= tag %>
+                </a>
+              </li>
+              <%}) %>
+          </ul>
+        </div>
+      </div> <!-- Tags -->
+    </div>
+    <div class="row mt-3 mx-1">
+      <div class="col">
+        <button id="sidebarCategoryAddBtn" class="sidebarBtn fa-solid fa-circle-plus" modal="categoryAdd">
+          Kategori Ekle
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- Sidebar -->
+
+
+<!-- Category Add Modal -->
+<div class="lightbox" id="categoryAdd">
+  <div class="modal">
+    <form action="#" class="modal-form">
+      <h3 class="form-header">Yeni Kategori</h3>
+      <div class="form-group">
+        <label for="categoryName">
+          <b>Ad:</b> <input type="text" name="categoryName" id="categoryName" placeholder="Kategori Adı">
+        </label>
+      </div>
+      <div class="form-groups">
+        <div class="form-group"> asdasd asd</div>
+        <div class="form-group"> asd asdasd asda sdasd </div>
+      </div>
+    </form>
+  </div>
+</div>

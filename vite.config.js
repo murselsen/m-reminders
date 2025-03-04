@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    root: 'src',
+    root: 'src/client',
     build: {
       sourcemap: true,
       rollupOptions: {
@@ -34,7 +34,7 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: '../dist',
+      outDir: '../../dist',
       emptyOutDir: true,
     },
     server: {
