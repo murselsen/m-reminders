@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 axios
-  .get('api/todos')
+  .get('api/tod-os')
   .then(response => {
     console.log('Api - Todos = Response:', response);
   })
   .catch(error => {
-    console.log('Api - Todos = Err:', error);
+    console.error('Api - Todos = Error:', error);
   });
