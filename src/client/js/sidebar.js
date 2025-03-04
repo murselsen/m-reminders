@@ -14,6 +14,7 @@ fetch('api/todos')
   .then(response => {
     console.log('Api - Todos = Response:', response);
   })
-  .then(response => {
-    console.log('Api - Todos = Data:', response);
+  .then(a => {
+    console.log('Api - Todos = Data:',   .then(a => {
+);
   });
