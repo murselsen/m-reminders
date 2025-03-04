@@ -27,6 +27,14 @@
   gap: 20px;
   color: black;
 }
+
+.todoFormContainer .todoForm .todoFormHeader {
+  text-align: center;
+  font-size: 30px;
+  line-height: 42.96px;
+  letter-spacing: 0%;
+}
+
 .todoFormContainer .todoForm .todoFormLabel {
   width: 100%;
   display: flex;

@@ -37,7 +37,7 @@
                   <!-- <h3 class="reminder-header">Remiders</h3> -->
                   <ul class="reminder-list">
                     <% todos.forEach(todo=> { %>
-                      <li class="reminder-item">
+                      <li class="reminder-item" id="remTodo<%= todo.id %>">
                         <div class="remContent">
                           <label for="rem<%= todo.id %>" class="remCheckbox">
                             <i class="fa-regular <%= todo.complete ? " fa-circle-check" : "fa-circle" %> fa-2x"
@@ -74,9 +74,10 @@
                             </div>
                           </div>
                           <div class="remActions">
-                            <button class="btn text-danger fa-solid fa-trash"
-                              onclick="location.href='/todoDel/<%= todo.id %>'"></button>
-                            <button class="btn  text-warning  fa-solid fa-pencil"></button>
+                            <button class="btn text-danger todo-del fa-solid fa-trash"
+                              data-source="<%= todo.id %>"></button>
+                            <button class="btn  text-warning todo-edit fa-solid fa-pencil"
+                              data-source="<%= todo.id %>"></button>
                           </div>
                         </div>
                         <div class="remSplit">
@@ -105,6 +106,7 @@
   </div>
 
   <script src="/public/js/index.js" type="module"></script>
+
 </body>
 
 </html>
