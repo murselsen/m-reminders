@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'; // Vite yapılandırma fonksiyonunu içe aktar
-import ejs from 'vite-plugin-ejs'; // EJS Vite eklentisini içe aktar
+import { ejs } from 'vite-plugin-ejs'; // EJS Vite eklentisini içe aktar
 
 export default defineConfig({
   plugins: [ejs()], // EJS eklentisini kullan
