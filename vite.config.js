@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: glob.sync('./src/client/*.html'),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -36,6 +36,15 @@ export default defineConfig(({ command }) => {
       },
       outDir: '../dist',
       emptyOutDir: true,
+    },
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3001',
+          changeOrigin: true,
+          secure: false,
+        },
+      },
     },
     plugins: [
       injectHTML(),
