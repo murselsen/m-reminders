@@ -42,15 +42,15 @@ npm install
 npm run dev
 ```
 
+5. Express.js sunucusunu başlatın:
+
+```bash
+npm run start:server
+```
+
 ## Kullanım
 
 Uygulama başlatıldıktan sonra, tarayıcınızda `http://localhost:3000` adresine
-giderek uygulamayı kullanabilirsiniz.
-
-## Katkıda Bulunma
-
-Katkıda bulunmak isterseniz, lütfen bir pull request gönderin veya bir issue
-açın.
 
 ## Lisans
 
