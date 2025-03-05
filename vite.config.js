@@ -13,8 +13,7 @@ export default defineConfig(({ command }) => {
     },
     // Set the root directory for the project
     root: 'src/client',
-    // Enable CORS
-    cors: true,
+
     // Build configuration
     build: {
       sourcemap: true,
@@ -54,10 +53,14 @@ export default defineConfig(({ command }) => {
       proxy: {
         '/api': {
           target: 'http://localhost:3001',
-          changeOrigin: true, 
+          changeOrigin: true,
+          headers: {
+            Connection: 'keep-alive',
+          },
           secure: false,
         },
       },
+      cors: true,
       port: 3000,
     },
     // Plugins configuration

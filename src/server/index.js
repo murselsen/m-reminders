@@ -8,7 +8,7 @@ const port = 3001;
 app.use(express.json());
 
 // Sample route
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   res.json('RestApi World! Welcome to the Vite Server');
 });
 app.get('/api/test', (req, res) => {
