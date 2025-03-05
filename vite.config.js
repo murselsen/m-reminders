@@ -32,17 +32,17 @@ export default defineConfig(({ command }) => {
               return '[name].[ext]';
             }
             return 'assets/[name]-[hash][extname]';
+            },
           },
+          },
+          outDir: '../../dist',
+          emptyOutDir: true,
         },
-      },
-      outDir: '../../dist',
-      emptyOutDir: true,
-    },
-    server: {
-      proxy: {
-        '/api': {
-          target: 'http://localhost:3001',
-          changeOrigin: true,
+        server: {
+          proxy: {
+          '/api': {
+            target: 'http://localhost:3001',
+            changeOrigin: true,
           secure: false,
         },
       },
@@ -50,7 +50,7 @@ export default defineConfig(({ command }) => {
     },
     plugins: [
       injectHTML(),
-      FullReload(['./src/**/**.html']),
+      FullReload(['./src/**/**.html', './src/**/**.js', './src/**/**.css']),
       SortCss({
         sort: 'mobile-first',
       }),

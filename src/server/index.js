@@ -1,7 +1,7 @@
 import express from 'express';
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.json('Hello World!');
+  res.json('RestApi World! Welcome to the Vite Server');
 });
 
 // Start the server
