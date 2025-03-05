@@ -1,18 +1,13 @@
 {
   "name": "m-reminders-clone",
   "private": true,
-  "version": "1.0.123",
+  "version": "1.0.140",
   "type": "module",
   "homepage": "https://murselsen.github.io/m-reminders-vite-vanilla",
   "scripts": {
     "dev": "vite",
-    "dev:server": "nodemon src/server",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "npm run start:server && npm run dev",
-    "start:server": "node src/server",
-    "build-and-start": "npm run build && npm run start:server",
-    "heroku-postbuild": "npm run build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
