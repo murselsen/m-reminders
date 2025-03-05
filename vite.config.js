@@ -38,7 +38,7 @@ export default defineConfig(({ command }) => {
       outDir: '../../dist',
       emptyOutDir: true,
     },
-    server: {
+    /* server: {
       proxy: {
         '/api': {
           target: 'http://localhost:3001',
@@ -46,7 +46,7 @@ export default defineConfig(({ command }) => {
           secure: false,
         },
       },
-    },
+    }, */
     plugins: [
       injectHTML(),
       FullReload(['./src/**/**.html']),
