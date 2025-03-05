@@ -25,7 +25,10 @@ const renderCategories = async () => {
 
     // Category Text - P
     const categoryTextElement = document.createElement('p');
-    categoryTextElement.textContent = category.name;
+    categoryTextElement.classList.add('categoryItem-text');
+    categoryTextElement.textContent = category.title;
+
+    categoryItemElement.appendChild(categoryTextElement);
 
     // Category Pin Icon - Button
     const categoryPinElement = document.createElement('button');
@@ -38,9 +41,14 @@ const renderCategories = async () => {
     categoryPinIconElement.classList.add('fa-solid', 'fa-map-pin');
 
     categoryPinElement.appendChild(categoryPinIconElement);
+    categoryItemElement.appendChild(categoryPinElement);
 
-    
+    // Category Count - Span
     const categoryCountElement = document.createElement('span');
+    categoryCountElement.classList.add('categoryItem-count');
+    categoryCountElement.textContent = category.count;
+
+    categoryItemElement.appendChild(categoryCountElement);
     // Category List - Li added
     sidebarCategoryList.appendChild(categoryItemElement);
   });
