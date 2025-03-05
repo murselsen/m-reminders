@@ -1,22 +1,15 @@
-import fs from 'fs';
-import path from 'path';
+import dbCategories from '../db/categories.json';
+import dbTodos from '../db/todos.json';
+
 const getCategories = async () => {
-  let dbCategories = await fs.readFileSync(
-    path.join(process.cwd(), 'src', 'server', 'db', 'categories.json'),
-    'utf8'
-  );
-  let dbTodos = await fs.readFileSync(
-    path.join(process.cwd(), 'src', 'server', 'db', 'todos.json'),
-    'utf8'
-  );
-
-  dbCategories = JSON.parse(dbCategories);
-  dbTodos = JSON.parse(dbTodos);
-
   const categories = [];
 
   dbCategories.forEach((category, index) => {
-    // console.log('Category:', category.title, dbTodos.filter(todo => todo.category === category.title).length);
+    // console.log(
+    //   'Category:',
+    //   category.title,
+    //   dbTodos.filter(todo => todo.category === category.title).length
+    // );
     categories.push({
       ...category,
       count: dbTodos.filter(todo => todo.category === category.title).length,
