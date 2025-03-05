@@ -4,50 +4,63 @@ import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
+// Export the Vite configuration
 export default defineConfig(({ command }) => {
   return {
+    // Define global variables based on the command
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
+    // Set the root directory for the project
     root: 'src/client',
+    // Enable CORS
     cors: true,
+    // Build configuration
     build: {
       sourcemap: true,
       rollupOptions: {
+        // Input HTML files for Rollup
         input: glob.sync('./src/client/*.html'),
         output: {
+          // Define manual chunks for vendor files
           manualChunks(id) {
             if (id.includes('node_modules')) {
               return 'vendor';
             }
           },
+          // Customize entry file names
           entryFileNames: chunkInfo => {
             if (chunkInfo.name === 'commonHelpers') {
               return 'commonHelpers.js';
             }
             return '[name].js';
           },
+          // Customize asset file names
           assetFileNames: assetInfo => {
             if (assetInfo.name && assetInfo.name.endsWith('.html')) {
               return '[name].[ext]';
             }
             return 'assets/[name]-[hash][extname]';
-            },
           },
-          },
-          outDir: '../../dist',
-          emptyOutDir: true,
         },
-        server: {
-          proxy: {
-          '/api': {
-            target: 'http://localhost:3001',
-            changeOrigin: true,
+      },
+      // Output directory for the build
+      outDir: '../../dist',
+      // Empty the output directory before building
+      emptyOutDir: true,
+    },
+    // Server configuration
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3001',
+          changeOrigin: true, 
           secure: false,
         },
       },
       port: 3000,
     },
+    // Plugins configuration
     plugins: [
       injectHTML(),
       FullReload(['./src/**/**.html', './src/**/**.js', './src/**/**.css']),

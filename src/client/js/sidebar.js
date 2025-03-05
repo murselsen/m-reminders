@@ -5,7 +5,7 @@ const renderCategories = async () => {
   const sidebarCategoryList = document.querySelector('#sidebarCategoryList');
   sidebarCategoryList.innerHTML = '';
 
-  const categories = await getCategories();
+  const categories = await fetch('/api/categories');
   console.log('Categories: ', categories);
 
   categories.forEach(category => {
