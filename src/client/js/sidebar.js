@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { getCategories } from '../../server/controllers/index.js';
 
 const renderCategories = async () => {
@@ -5,17 +6,11 @@ const renderCategories = async () => {
   const sidebarCategoryList = document.querySelector('#sidebarCategoryList');
   sidebarCategoryList.innerHTML = '';
 
-  const categories = "await fetch('/api/categories').json();";
-  console.log('Categories: ', categories);
-
-  fetch('/api/categories')
-    .then(response => {
-      console.log('Response: ', response.body);
-      return response.json();
-    })
-    .then(categories => {
-      console.log('Categories: ', categories);
-
+  axios
+    .get('/api/categories')
+    .then(res => {
+      // console.log('Res: ', res.data);
+      let categories = res.data;
       categories.forEach(category => {
         const categoryItemElement = document.createElement('li');
         categoryItemElement.classList.add('categoryItem');
@@ -60,6 +55,21 @@ const renderCategories = async () => {
         // Category List - Li added
         sidebarCategoryList.appendChild(categoryItemElement);
       });
+    })
+    .catch(err => {
+      console.error('Error: ', err);
+      const categoryItemElement = document.createElement('li');
+      categoryItemElement.classList.add('categoryItem');
+
+      // Category Text - P
+      const categoryTextElement = document.createElement('p');
+      categoryTextElement.classList.add('categoryItem-text');
+      categoryTextElement.style.color = 'red';
+      categoryTextElement.textContent = err.message;
+
+      categoryItemElement.appendChild(categoryTextElement);
+
+      sidebarCategoryList.appendChild(categoryItemElement);
     });
 
   console.timeEnd('renderCategories');

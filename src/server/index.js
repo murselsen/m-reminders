@@ -16,7 +16,6 @@ app.get('/api/test', (req, res) => {
 });
 app.get('/api/categories', (req, res) => {
   getCategories().then(categories => {
-    console.log('Categories:', categories);
     res.json(categories);
   });
 });
