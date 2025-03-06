@@ -26,7 +26,6 @@ const renderTags = async () => {
 renderTags();
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
   if (e.target.nodeName === 'A') {
-    console.log('Tag Clicked: ', e.target);
     let source = e.target.dataset.source;
     alert('Seçilen Etiket: ' + source.toString());
   }
