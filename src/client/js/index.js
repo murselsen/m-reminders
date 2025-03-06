@@ -55,8 +55,13 @@ const renderReminders = () => {
         reminderItemContentElement.appendChild(reminderIconLabelElement);
 
         // Reminder Info - Div
-        const reminderItemContentInfoElement
+        const reminderItemContentInfoElement = document.createElement('div');
+        reminderItemContentInfoElement.classList.add('remInfo');
+        
 
+
+
+        reminderItemContentElement.appendChild(reminderItemContentInfoElement);
         reminderItemElement.appendChild(reminderItemContentElement);
 
         remindersList.appendChild(reminderItemElement);
