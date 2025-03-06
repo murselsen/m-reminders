@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { getCategories } from '../../server/controllers/index.js';
 
 const renderCategories = async () => {
   console.time('renderCategories');
@@ -75,37 +74,9 @@ const renderCategories = async () => {
   console.timeEnd('renderCategories');
 };
 
-const renderTags = async () => {
-  console.time('renderTags');
-  const sidebarTagList = document.querySelector('#sidebarTagList');
-  sidebarTagList.innerHTML = '';
 
-  axios('/api/tags').then(res => {
-    let tags = res.data;
-    for (let tag of tags) {
-      const tagItemElement = document.createElement('li');
-      tagItemElement.classList.add('tagItem');
-      tagItemElement.dataset.source = tag;
-
-      const tagItemLinkElement = document.createElement('a');
-      tagItemLinkElement.classList.add('tagLink');
-      tagItemLinkElement.dataset.id = tag;
-      tagItemLinkElement.textContent = tag;
-
-      tagItemElement.appendChild(tagItemLinkElement);
-      sidebarTagList.appendChild(tagItemElement);
-    }
-  });
-  console.timeEnd('renderTags');
-};
 
 // Categories
 renderCategories();
 
-// Tags
-renderTags();
-document.querySelector('#sidebarTagList').addEventListener('click', e => {
-  if (e.target.nodeName === 'A') {
-    console.log('Tag Clicked: ', e.target);
-  }
-});
+
