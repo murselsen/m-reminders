@@ -89,6 +89,7 @@ const renderTags = async () => {
 
       const tagItemLinkElement = document.createElement('a');
       tagItemLinkElement.classList.add('tagLink');
+      tagItemLinkElement.dataset.id = tag;
       tagItemLinkElement.textContent = tag;
 
       tagItemElement.appendChild(tagItemLinkElement);
