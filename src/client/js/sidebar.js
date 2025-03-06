@@ -105,4 +105,7 @@ renderCategories();
 renderTags();
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
   console.log('Tag Clicked: ', e);
+
+  if ( e.target)
+
 });
