@@ -104,8 +104,7 @@ renderCategories();
 // Tags
 renderTags();
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
-  console.log('Tag Clicked: ', e);
-
-  if ( e.target.nodeName === 'A')
-
+  if (e.target.nodeName === 'A') {
+    console.log('Tag Clicked: ', e.target);
+  }
 });
