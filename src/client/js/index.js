@@ -48,7 +48,7 @@ gallery.innerHTML = galleryMarkup; */
                             ${reminder.description}
                           </p>
                           <div class="infoBox">
-                            ${for(let info of reminder.)}
+                            
                             <span class="infoItem">
 
                             </span>
