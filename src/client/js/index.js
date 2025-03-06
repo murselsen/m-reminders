@@ -30,24 +30,32 @@ const renderReminders = () => {
         const reminderIconItagElement = document.createElement('i');
         reminderIconItagElement.classList.add('fa-regular', 'fa-2x');
         reminderIconItagElement.id = `rem${reminder.id}Circle`;
-        if (reminder.completed) {
-          reminderIconItagElement.classList.add('fa-circle-check');
-        } else {
-          reminderIconItagElement.classList.add('fa-circle');
-        }
 
         const reminderIconInputElement = document.createElement('input');
         reminderIconInputElement.type = 'checkbox';
         reminderIconInputElement.name = 'completed';
         reminderIconInputElement.id = `rem${reminder.id}`;
-        reminderIconInputElement.hidden = false;
-        reminderIconInputElement.checked = () => {
+        reminderIconInputElement.hidden = true;
+        reminderIconInputElement.addEventListener('change', e => {
+          reminderIconItagElement.classList.toggle('fa-circle');
+          reminderIconItagElement.classList.toggle('fa-circle-check');
+        });
+
+        if (reminder.completed) {
           reminderIconItagElement.classList.add('fa-circle-check');
-        };
+          reminderIconItagElement.classList.remove('fa-circle');
+          reminderIconInputElement.checked = true;
+        } else {
+          reminderIconItagElement.classList.add('fa-circle');
+          reminderIconInputElement.checked = false;
+        }
 
         reminderIconLabelElement.appendChild(reminderIconItagElement);
         reminderIconLabelElement.appendChild(reminderIconInputElement);
         reminderItemContentElement.appendChild(reminderIconLabelElement);
+
+        // Reminder Info - Div
+        const reminderItemContentInfoElement
 
         reminderItemElement.appendChild(reminderItemContentElement);
 
