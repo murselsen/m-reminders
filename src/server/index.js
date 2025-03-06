@@ -28,7 +28,10 @@ app.get('/api/todos', (req, res) => {
 });
 
 app.get('/api/tags', (req, res) => {
-  res.json({ message: 'Hello from the tags endpoint!' });
+  getTags().then(tagData => {
+    console.log('Tags List:', tagData);
+    res.json(todoData);
+  });
 });
 
 // Start the server
