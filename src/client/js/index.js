@@ -29,7 +29,7 @@ const renderReminders = () => {
         // Reminder Item Icon - i
         const reminderIconItagElement = document.createElement('i');
         reminderIconItagElement.classList.add('fa-solid', 'fa-2x');
-        reminderIconItagElement.id = 
+        reminderIconItagElement.id = `rem${reminder.id}Circle`;
         if (reminder.completed) {
           reminderIconItagElement.classList.add('fa-check-square');
         } else {
