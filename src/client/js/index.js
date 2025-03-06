@@ -183,6 +183,7 @@ const renderTag = tag => {
 
   const tagItemLinkElement = document.createElement('a');
   tagItemLinkElement.classList.add('tagLink');
+  tagItemLinkElement.href = '#';
   tagItemLinkElement.dataset.source = tag;
   tagItemLinkElement.textContent = tag;
 
@@ -220,17 +221,21 @@ const renderAllTags = () => {
 renderAllTags();
 
 // Event Listeners
-document.querySelector('#sidebarCategoryList').addEventListener('click', e => {
-  console.log(e);
-  /* if (e.target.nodeName === 'A') {
-    let source = e.target.dataset.source;
-    alert('Seçilen Etiket: ' + source.toString());
-  } */
-});
+document.querySelector('#sidebarCategoryList').addEventListener(
+  'click',
+  e => {
+    if (e.target.nodeName === 'A') {
+      let source = e.target.dataset.source;
+      alert('Seçilen Etiket: ' + source.toString());
+    }
+  },
+  {
+    passive: true,
+  }
+);
 
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
-  if (e.target.nodeName === 'A') {
-    let source = e.target.dataset.source;
-    alert('Seçilen Etiket: ' + source.toString());
-  }
+  console.log(e.target);
+  let source = e.target.dataset.source;
+  alert('Seçilen Etiket: ' + source);
 });
