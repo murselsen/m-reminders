@@ -16,7 +16,14 @@ const renderReminders = () => {
           element: 'li',
           id: `remTodo${reminder.id}`,
           classList: ['reminder-item'],
-          
+          children: [
+            {
+              element: 'div',
+              classList: ['remContent'],
+              children: [],
+            },
+            { ele},
+          ],
         };
 
         // Reminder Item - Li
