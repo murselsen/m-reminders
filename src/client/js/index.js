@@ -27,8 +27,9 @@ const renderReminders = () => {
         reminderIconLabelElement.setAttribute('for', `rem${reminder.id}`);
 
         // Reminder Item Icon - i
-        const reminderIconElement = document.createElement('i');
-        
+        const reminderIconItagElement = document.createElement('i');
+        reminderIconItagElement.classList.add('fa-solid');
+        // if ( reminder.)
 
         reminderItemElement.appendChild(reminderItemContentElement);
 
