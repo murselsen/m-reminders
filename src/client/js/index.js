@@ -12,6 +12,13 @@ const renderReminders = () => {
       console.log('Reminders: ', reminders);
 
       reminders.forEach(reminder => {
+        const reminderItemHtmlObject = {
+          element: 'li',
+          id: `remTodo${reminder.id}`,
+          classList: ['reminder-item'],
+          
+        };
+
         // Reminder Item - Li
         const reminderItemElement = document.createElement('li');
         reminderItemElement.classList.add('reminder-item');
@@ -57,9 +64,16 @@ const renderReminders = () => {
         // Reminder Info - Div
         const reminderItemContentInfoElement = document.createElement('div');
         reminderItemContentInfoElement.classList.add('remInfo');
-        
 
+        // Reminder Info Title - h4
+        const reminderItemContentInfoTitleElement =
+          document.createElement('h4');
+        reminderItemContentInfoTitleElement.classList.add('title');
+        reminderItemContentInfoTitleElement.textContent = reminder.title;
 
+        reminderItemContentInfoElement.appendChild(
+          reminderItemContentInfoTitleElement
+        );
 
         reminderItemContentElement.appendChild(reminderItemContentInfoElement);
         reminderItemElement.appendChild(reminderItemContentElement);
