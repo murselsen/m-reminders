@@ -85,10 +85,10 @@ const renderTags = async () => {
     console.log('Tags: ', tags);
     for (let tag of tags) {
       const tagItemElement = document.createElement('li');
-
-
       
 
+
+      sidebarTagList.appendChild(tagItemElement);
     }
   });
   console.timeEnd('renderTags');
