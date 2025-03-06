@@ -29,8 +29,8 @@ app.get('/api/todos', (req, res) => {
 
 app.get('/api/tags', (req, res) => {
   getTags().then(tagData => {
-    console.log('Tags List:', tagData);
-    res.json(todoData);
+    console.log('Tag List:', tagData);
+    res.json(tagData);
   });
 });
 

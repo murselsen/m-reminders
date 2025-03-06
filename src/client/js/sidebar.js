@@ -77,7 +77,14 @@ const renderCategories = async () => {
 
 const renderTags = async () => {
   console.time('renderTags');
+  const sidebarTagList = document.querySelector('#sidebarTagList');
+  sidebarTagList.innerHTML = '';
 
+  axios('/api/tags').then(res => {
+    let tags = res.data;
+    console.log("Tags: ", tags);
+    for
+  })
   console.timeEnd('renderTags');
 };
 
