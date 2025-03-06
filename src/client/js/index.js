@@ -22,8 +22,13 @@ const renderReminders = () => {
         reminderItemContentElement.classList.add('remContent');
 
         // Reminder Item Icon - Label
-        const reminderIconElement = document.createElement('label');
-        reminderIconElement.classList.add('rem')
+        const reminderIconLabelElement = document.createElement('label');
+        reminderIconLabelElement.classList.add('remChechbox');
+        reminderIconLabelElement.setAttribute('for', `rem${reminder.id}`);
+
+        // Reminder Item Icon - i
+        const reminderIconElement = document.createElement('i');
+        
 
         reminderItemElement.appendChild(reminderItemContentElement);
 
