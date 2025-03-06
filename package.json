@@ -1,7 +1,7 @@
 {
   "name": "m-reminders-clone",
   "private": true,
-  "version": "1.0.578",
+  "version": "1.0.583",
   "type": "module",
   "homepage": "https://murselsen.github.io/m-reminders-vite-vanilla",
   "scripts": {

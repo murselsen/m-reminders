@@ -85,8 +85,12 @@ const renderTags = async () => {
     console.log('Tags: ', tags);
     for (let tag of tags) {
       const tagItemElement = document.createElement('li');
-      
+      tagItemElement.classList.add('tagItem');
+      tagItemElement.textContent = tag;
 
+        const tagItemLinkElement = document.createElement('a');
+      tagItemLinkElement.classList.add('tagLink');
+      tagItemLinkElement;
 
       sidebarTagList.appendChild(tagItemElement);
     }
