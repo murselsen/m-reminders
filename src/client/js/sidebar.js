@@ -98,7 +98,10 @@ const renderTags = async () => {
   console.timeEnd('renderTags');
 };
 
+// Categories
 renderCategories();
+
+// Tags
 renderTags();
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
   console.log('Tag Clicked: ', e);
