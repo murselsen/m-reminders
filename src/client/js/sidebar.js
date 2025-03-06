@@ -82,16 +82,16 @@ const renderTags = async () => {
 
   axios('/api/tags').then(res => {
     let tags = res.data;
-    console.log('Tags: ', tags);
     for (let tag of tags) {
       const tagItemElement = document.createElement('li');
       tagItemElement.classList.add('tagItem');
-      tagItemElement.textContent = tag;
+      tagItemElement.dataset.source = tag;
 
-        const tagItemLinkElement = document.createElement('a');
+      const tagItemLinkElement = document.createElement('a');
       tagItemLinkElement.classList.add('tagLink');
-      tagItemLinkElement;
+      tagItemLinkElement.textContent = tag;
 
+      tagItemElement.appendChild(tagItemLinkElement);
       sidebarTagList.appendChild(tagItemElement);
     }
   });
