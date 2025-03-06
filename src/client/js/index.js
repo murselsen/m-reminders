@@ -18,7 +18,7 @@ const renderReminders = () => {
         reminderItemElement.id = `remTodo${reminder.id}`;
 
         // Reminder Item Content - Div
-        reminderItemContentElement = document.createElement('div');
+        const reminderItemContentElement = document.createElement('div');
         reminderItemContentElement.classList.add('remContent');
 
         // Reminder Item Icon - Label
@@ -28,8 +28,13 @@ const renderReminders = () => {
 
         // Reminder Item Icon - i
         const reminderIconItagElement = document.createElement('i');
-        reminderIconItagElement.classList.add('fa-solid');
-        // if ( reminder.)
+        reminderIconItagElement.classList.add('fa-solid', 'fa-2x');
+        reminderIconItagElement.id = 
+        if (reminder.completed) {
+          reminderIconItagElement.classList.add('fa-check-square');
+        } else {
+          reminderIconItagElement.classList.add('fa-square');
+        }
 
         reminderItemElement.appendChild(reminderItemContentElement);
 
