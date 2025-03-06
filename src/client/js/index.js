@@ -28,13 +28,23 @@ const renderReminders = () => {
 
         // Reminder Item Icon - i
         const reminderIconItagElement = document.createElement('i');
-        reminderIconItagElement.classList.add('fa-solid', 'fa-2x');
+        reminderIconItagElement.classList.add('fa-regular', 'fa-2x');
         reminderIconItagElement.id = `rem${reminder.id}Circle`;
         if (reminder.completed) {
-          reminderIconItagElement.classList.add('fa-check-square');
+          reminderIconItagElement.classList.add('fa-circle-check');
         } else {
-          reminderIconItagElement.classList.add('fa-square');
+          reminderIconItagElement.classList.add('fa-circle');
         }
+
+        const reminderIconInputElement = document.createElement('input');
+        reminderIconInputElement.type = 'checkbox';
+        reminderIconInputElement.name = 'completed';
+        reminderIconInputElement.id = `rem${reminder.id}`;
+        reminderIconInputElement.hidden = false;
+
+        reminderIconLabelElement.appendChild(reminderIconItagElement);
+        reminderIconLabelElement.appendChild(reminderIconInputElement);
+        reminderItemContentElement.appendChild(reminderIconLabelElement);
 
         reminderItemElement.appendChild(reminderItemContentElement);
 
