@@ -13,7 +13,7 @@ export default defineConfig(({ command }) => {
     },
     // Set the root directory for the project
     root: 'src/client',
-
+    open: true,
     // Build configuration
     build: {
       sourcemap: true,

@@ -97,6 +97,8 @@ const renderTags = async () => {
   });
   console.timeEnd('renderTags');
 };
+document.querySelector('#sidebarTagList');
+
 
 renderCategories();
 renderTags();
