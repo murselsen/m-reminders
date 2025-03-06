@@ -41,6 +41,9 @@ const renderReminders = () => {
         reminderIconInputElement.name = 'completed';
         reminderIconInputElement.id = `rem${reminder.id}`;
         reminderIconInputElement.hidden = false;
+        reminderIconInputElement.checked = () => {
+          reminderIconItagElement.classList.add('fa-circle-check');
+        };
 
         reminderIconLabelElement.appendChild(reminderIconItagElement);
         reminderIconLabelElement.appendChild(reminderIconInputElement);
