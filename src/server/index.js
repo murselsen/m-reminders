@@ -1,5 +1,10 @@
 import express from 'express';
-import { getCategories, getTodos, getTags } from './controllers/index.js';
+import {
+  getCategories,
+  getTodos,
+  getTags,
+  getTodosByCategory,
+} from './controllers/index.js';
 
 const app = express();
 const port = 3001;
@@ -33,6 +38,15 @@ app.get('/api/tags', (req, res) => {
     res.json(tagData);
   });
 });
+
+app.get('/api/todos/category/:categoryTitle', (req, res) => {
+  getTodosByCategory(req.params.categoryTitle).then(todoData => {
+    console.log('By Category Todo List:', todoData);
+    res.json(todoData);
+  });
+});
+
+app.get('/api/todos/tag/:tagTitle', (req, res) => {});
 
 // Start the server
 app.listen(port, () => {

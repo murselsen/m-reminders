@@ -98,7 +98,7 @@ gallery.innerHTML = galleryMarkup; */
 };
 renderReminders();
 
-const renderCategories = async () => {
+const renderCategories = () => {
   console.time('renderCategories');
   const sidebarCategoryList = document.querySelector('#sidebarCategoryList');
   sidebarCategoryList.innerHTML = '';
@@ -189,24 +189,44 @@ const renderTag = tag => {
   tagItemElement.appendChild(tagItemLinkElement);
   document.querySelector('#sidebarTagList').appendChild(tagItemElement);
 };
-
-const renderAllTags = async () => {
+const renderAllTags = () => {
   console.time('renderTags');
 
   document.querySelector('#sidebarTagList').innerHTML = '';
-  axios('/api/tags').then(res => {
-    let tags = res.data;
-    for (let tag of tags) {
-      renderTag(tag);
-    }
-  });
+  axios('/api/tags')
+    .then(res => {
+      let tags = res.data;
+      for (let tag of tags) {
+        renderTag(tag);
+      }
+    })
+    .catch(err => {
+      const tagItemElement = document.createElement('li');
+      tagItemElement.classList.add('tagItem');
+
+      const tagItemLinkElement = document.createElement('a');
+      tagItemLinkElement.classList.add('tagLink');
+      tagItemLinkElement.style.color = 'red';
+
+      tagItemLinkElement.textContent = err.message;
+
+      tagItemElement.appendChild(tagItemLinkElement);
+      document.querySelector('#sidebarTagList').appendChild(tagItemElement);
+    });
   console.timeEnd('renderTags');
 };
+
 // Tags
-
-renderTag(tagItem);
-
 renderAllTags();
+
+// Event Listeners
+document.querySelector('#sidebarCategoryList').addEventListener('click', e => {
+  console.log(e);
+  /* if (e.target.nodeName === 'A') {
+    let source = e.target.dataset.source;
+    alert('Seçilen Etiket: ' + source.toString());
+  } */
+});
 
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
   if (e.target.nodeName === 'A') {
