@@ -63,9 +63,12 @@ gallery.innerHTML = galleryMarkup; */
 
                           </div>
                           <div class="tagBox">
-                            ${reminder.tags.map(
-                              tag => '<span class="tagItem">' + tag + '</span>'
-                            )}
+                            ${reminder.tags
+                              .flatMap(
+                                tag =>
+                                  '<span class="tagItem">' + tag + '</span>'
+                              )
+                              .join('')}
                           </div>
                         </div>
                         <div class="remActions">

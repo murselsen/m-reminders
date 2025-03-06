@@ -1,5 +1,5 @@
 import express from 'express';
-import { getCategories, getTodos } from './controllers/index.js';
+import { getCategories, getTodos, getTags } from './controllers/index.js';
 
 const app = express();
 const port = 3001;
@@ -25,6 +25,10 @@ app.get('/api/todos', (req, res) => {
     console.log('Todo List:', todoData);
     res.json(todoData);
   });
+});
+
+app.get('/api/tags', (req, res) => {
+  res.json({ message: 'Hello from the tags endpoint!' });
 });
 
 // Start the server
