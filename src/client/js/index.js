@@ -175,30 +175,39 @@ const renderCategories = async () => {
 // Categories
 renderCategories();
 
-const renderTags = async () => {
-  console.time('renderTags');
-  const sidebarTagList = document.querySelector('#sidebarTagList');
-  sidebarTagList.innerHTML = '';
+// Tag Create
 
+const renderTag = tag => {
+  const tagItemElement = document.createElement('li');
+  tagItemElement.classList.add('tagItem');
+
+  const tagItemLinkElement = document.createElement('a');
+  tagItemLinkElement.classList.add('tagLink');
+  tagItemLinkElement.dataset.source = tag;
+  tagItemLinkElement.textContent = tag;
+
+  tagItemElement.appendChild(tagItemLinkElement);
+  document.querySelector('#sidebarTagList').appendChild(tagItemElement);
+};
+
+const renderAllTags = async () => {
+  console.time('renderTags');
+
+  document.querySelector('#sidebarTagList').innerHTML = '';
   axios('/api/tags').then(res => {
     let tags = res.data;
     for (let tag of tags) {
-      const tagItemElement = document.createElement('li');
-      tagItemElement.classList.add('tagItem');
-
-      const tagItemLinkElement = document.createElement('a');
-      tagItemLinkElement.classList.add('tagLink');
-      tagItemLinkElement.dataset.source = tag;
-      tagItemLinkElement.textContent = tag;
-
-      tagItemElement.appendChild(tagItemLinkElement);
-      sidebarTagList.appendChild(tagItemElement);
+      renderTag(tag);
     }
   });
   console.timeEnd('renderTags');
 };
 // Tags
-renderTags();
+
+renderTag(tagItem);
+
+renderAllTags();
+
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
   if (e.target.nodeName === 'A') {
     let source = e.target.dataset.source;
