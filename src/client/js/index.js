@@ -42,13 +42,13 @@ gallery.innerHTML = galleryMarkup; */
                         </label>
                         <div class="remInfo">
                           <h4 class="title">
-                            {TodoTitle}
+                            ${reminder.title}
                           </h4>
                           <p class="description">
-                            {TodoDescrption}
+                            ${reminder.description}
                           </p>
                           <div class="infoBox">
-
+                            ${for(let info of reminder.)}
                             <span class="infoItem">
 
                             </span>
@@ -63,8 +63,8 @@ gallery.innerHTML = galleryMarkup; */
                           </div>
                         </div>
                         <div class="remActions">
-                          <button class="btn text-danger todo-del fa-solid fa-trash" data-source="0"></button>
-                          <button class="btn text-warning todo-edit fa-solid fa-pencil" data-source="0"></button>
+                          <button class="btn text-danger todo-del fa-solid fa-trash" data-source="${reminder.id}"></button>
+                          <button class="btn text-warning todo-edit fa-solid fa-pencil" data-source="${reminder.id}"></button>
                         </div>
                       </div>
                       <div class="remSplit">
