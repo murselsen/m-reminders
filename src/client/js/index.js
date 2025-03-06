@@ -1,1 +1,5 @@
-const remindersList = document.querySelector('#')
+const remindersList = document.querySelector('#remindersList');
+
+const renderReminders = () => {
+  
+};
