@@ -82,9 +82,15 @@ const renderTags = async () => {
 
   axios('/api/tags').then(res => {
     let tags = res.data;
-    console.log("Tags: ", tags);
-    for
-  })
+    console.log('Tags: ', tags);
+    for (let tag of tags) {
+      const tagItemElement = document.createElement('li');
+
+
+      
+
+    }
+  });
   console.timeEnd('renderTags');
 };
 
