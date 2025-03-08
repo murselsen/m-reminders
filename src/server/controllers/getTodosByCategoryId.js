@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const getTodosByCategory = async category => {
+const getTodosByCategoryId = async category => {
   let dbTodos = await fs.readFileSync(
     path.join(process.cwd(), 'src', 'server', 'db', 'todos.json'),
     'utf8'
@@ -12,4 +12,4 @@ const getTodosByCategory = async category => {
   console.log('Todos By Category:', dbTodos);
   return dbTodos;
 };
-export default getTodosByCategory;
+export default getTodosByCategoryId;

@@ -1,94 +1,132 @@
 import axios from 'axios';
 
+// const reminder = {
+//   renderAll: renderReminders,
+//   renderItem() {},
+// };
+const renderTodo = reminder => {
+  const reminderItemElement = document.createElement('li');
+  reminderItemElement.classList.add('reminder-item');
+  reminderItemElement.id = `remTodo${reminder.id}`;
+
+  const remContentElement = document.createElement('div');
+  remContentElement.classList.add('remContent');
+
+  const remCheckboxLabel = document.createElement('label');
+  remCheckboxLabel.setAttribute('for', `rem${reminder.id}`);
+  remCheckboxLabel.classList.add('remCheckbox');
+
+  const remCheckboxIcon = document.createElement('i');
+  remCheckboxIcon.classList.add(
+    'fa-regular',
+    reminder.completed ? 'fa-circle-check' : 'fa-circle',
+    'fa-2x'
+  );
+  remCheckboxIcon.id = `rem${reminder.id}circle`;
+
+  const remCheckboxInput = document.createElement('input');
+  remCheckboxInput.type = 'checkbox';
+  remCheckboxInput.name = 'complete';
+  remCheckboxInput.hidden = true;
+  remCheckboxInput.id = `rem${reminder.id}`;
+
+  remCheckboxLabel.appendChild(remCheckboxIcon);
+  remCheckboxLabel.appendChild(remCheckboxInput);
+
+  const remInfoElement = document.createElement('div');
+  remInfoElement.classList.add('remInfo');
+
+  const titleElement = document.createElement('h4');
+  titleElement.classList.add('title');
+  titleElement.textContent = reminder.title;
+
+  const descriptionElement = document.createElement('p');
+  descriptionElement.classList.add('description');
+  descriptionElement.textContent = reminder.description;
+
+  const infoBoxElement = document.createElement('div');
+  infoBoxElement.classList.add('infoBox');
+
+  const infoItemElement = document.createElement('span');
+  infoItemElement.classList.add('infoItem');
+  infoItemElement.textContent = reminder.date;
+
+  if (reminder.time) {
+    const timeElement = document.createElement('span');
+    timeElement.classList.add('infoItem');
+    timeElement.textContent = reminder.time;
+    infoBoxElement.appendChild(timeElement);
+  }
+
+  infoBoxElement.appendChild(infoItemElement);
+
+  const tagBoxElement = document.createElement('div');
+  tagBoxElement.classList.add('tagBox');
+
+  reminder.tags.forEach(tag => {
+    const tagItemElement = document.createElement('span');
+    tagItemElement.classList.add('tagItem');
+    tagItemElement.textContent = tag;
+    tagBoxElement.appendChild(tagItemElement);
+  });
+
+  remInfoElement.appendChild(titleElement);
+  remInfoElement.appendChild(descriptionElement);
+  remInfoElement.appendChild(infoBoxElement);
+  remInfoElement.appendChild(tagBoxElement);
+
+  const remActionsElement = document.createElement('div');
+  remActionsElement.classList.add('remActions');
+
+  const deleteButton = document.createElement('button');
+  deleteButton.classList.add(
+    'btn',
+    'text-danger',
+    'todo-del',
+    'fa-solid',
+    'fa-trash'
+  );
+  deleteButton.dataset.source = reminder.id;
+
+  const editButton = document.createElement('button');
+  editButton.classList.add(
+    'btn',
+    'text-warning',
+    'todo-edit',
+    'fa-solid',
+    'fa-pencil'
+  );
+  editButton.dataset.source = reminder.id;
+
+  remActionsElement.appendChild(deleteButton);
+  remActionsElement.appendChild(editButton);
+
+  remContentElement.appendChild(remCheckboxLabel);
+  remContentElement.appendChild(remInfoElement);
+  remContentElement.appendChild(remActionsElement);
+
+  const remSplitElement = document.createElement('div');
+  remSplitElement.classList.add('remSplit');
+
+  const remSplitHrElement = document.createElement('hr');
+  remSplitHrElement.classList.add('remSplitHr');
+
+  remSplitElement.appendChild(remSplitHrElement);
+
+  reminderItemElement.appendChild(remContentElement);
+  reminderItemElement.appendChild(remSplitElement);
+
+  document.querySelector('#remindersList').appendChild(reminderItemElement);
+};
 const renderReminders = () => {
   console.time('renderReminders');
   const remindersList = document.querySelector('#remindersList');
-  // remindersList.innerHTML = '';
-
+  remindersList.innerHTML = '';
   axios
     .get('/api/todos')
     .then(res => {
       let reminders = res.data;
-      console.log('Reminders: ', reminders);
-
-      /*
-        const galleryMarkup = images
-  .map(
-    (image) => `
-    <li class="gallery-item">
-      <a class="gallery-link" href="${image.original}">
-        <img
-          class="gallery-image"
-          src="${image.preview}"
-          data-source="${image.original}"
-          alt="${image.description}"
-        />
-      </a>
-    </li>
-  `
-  )
-  .join("");
-
-gallery.innerHTML = galleryMarkup; */
-
-      const remindersMarkup = reminders
-        .map(
-          reminder => `
-                    <li class="reminder-item" id="remTodo${reminder.id}">
-                      <div class="remContent">
-                        <label for="rem${reminder.id}" class="remCheckbox">
-                          <i class="fa-regular ${
-                            reminder.completed ? 'fa-circle-check' : 'fa-circle'
-                          } fa-2x" id="rem${reminder.id}circle"></i>
-                          <input type="checkbox" name="complete" hidden id="rem${
-                            reminder.id
-                          }">
-                        </label>
-                        <div class="remInfo">
-                          <h4 class="title">
-                            ${reminder.title}
-                          </h4>
-                          <p class="description">
-                            ${reminder.description}
-                          </p>
-                          <div class="infoBox">
-                            <span class="infoItem">
-                              ${reminder.date}
-                            </span>
-                            ${
-                              reminder.time
-                                ? `<span class="infoItem">${reminder.time}</span>`
-                                : ''
-                            }
-
-                          </div>
-                          <div class="tagBox">
-                            ${reminder.tags
-                              .flatMap(
-                                tag =>
-                                  '<span class="tagItem">' + tag + '</span>'
-                              )
-                              .join('')}
-                          </div>
-                        </div>
-                        <div class="remActions">
-                          <button class="btn text-danger todo-del fa-solid fa-trash" data-source="${
-                            reminder.id
-                          }"></button>
-                          <button class="btn text-warning todo-edit fa-solid fa-pencil" data-source="${
-                            reminder.id
-                          }"></button>
-                        </div>
-                      </div>
-                      <div class="remSplit">
-                        <hr class="remSplitHr">
-                      </div>
-                    </li>
-        `
-        )
-        .join('');
-
-      remindersList.innerHTML = remindersMarkup;
+      reminders.forEach(reminder => renderTodo(reminder));
     })
     .catch(err => {
       console.error('Error: ', err);
@@ -111,6 +149,7 @@ const renderCategories = () => {
       categories.forEach(category => {
         const categoryItemElement = document.createElement('li');
         categoryItemElement.classList.add('categoryItem');
+        categoryItemElement.dataset.id = category.id;
 
         // Category Icon - Div
         const categoryIconDivElement = document.createElement('div');
@@ -224,9 +263,11 @@ renderAllTags();
 document.querySelector('#sidebarCategoryList').addEventListener(
   'click',
   e => {
-    if (e.target.nodeName === 'A') {
-      let source = e.target.dataset.source;
-      alert('Seçilen Etiket: ' + source.toString());
+    console.log(e.target);
+    console.log(e.target.nodeName);
+    if (e.target.nodeName === 'LI') {
+      let categoryId = e.target.dataset.id;
+      alert('Seçilen Kategori Kimlik No: ' + categoryId.toString());
     }
   },
   {

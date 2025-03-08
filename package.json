@@ -1,9 +1,9 @@
 {
   "name": "m-reminders-clone",
   "private": true,
-  "version": "1.0.667",
+  "version": "1.0.703",
   "type": "module",
-  "homepage": "https://murselsen.github.io/m-reminders-vite-vanilla",
+  "homepage": "https://murselsen.github.io/m-reminders",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -24,7 +24,7 @@
   },
   "author": "Mürsel ŞEN ",
   "readme": "README.md",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.8.1",
     "express": "^4.17.1",

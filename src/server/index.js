@@ -3,7 +3,7 @@ import {
   getCategories,
   getTodos,
   getTags,
-  getTodosByCategory,
+  getTodosByCategoryId,
 } from './controllers/index.js';
 
 const app = express();
@@ -39,8 +39,8 @@ app.get('/api/tags', (req, res) => {
   });
 });
 
-app.get('/api/todos/category/:categoryTitle', (req, res) => {
-  getTodosByCategory(req.params.categoryTitle).then(todoData => {
+app.get('/api/todos/category/:categoryId', (req, res) => {
+  getTodosByCategoryId(req.params.categoryId).then(todoData => {
     console.log('By Category Todo List:', todoData);
     res.json(todoData);
   });
