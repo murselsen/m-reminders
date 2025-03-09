@@ -19,7 +19,7 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
       rollupOptions: {
         // Input HTML files for Rollup
-        input: glob.sync('./src/client/*.html'),
+        input: glob.sync('./src/*.html'),
         output: {
           // Define manual chunks for vendor files
           manualChunks(id) {

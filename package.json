@@ -1,7 +1,7 @@
 {
   "name": "m-reminders-clone",
   "private": true,
-  "version": "1.0.703",
+  "version": "1.0.705",
   "type": "module",
   "homepage": "https://murselsen.github.io/m-reminders",
   "scripts": {
@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon src/server/index.js",
+    "server": "nodemon server/index.js",
     "client": "vite"
   },
   "devDependencies": {
