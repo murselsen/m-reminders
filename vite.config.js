@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     // Set the root directory for the project
-    root: 'src/client',
+    root: 'src/',
     open: true,
     // Build configuration
     build: {
