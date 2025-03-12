@@ -126,7 +126,12 @@ const renderReminders = () => {
     .get('/api/todos')
     .then(res => {
       let reminders = res.data;
-      reminders.forEach(reminder => renderTodo(reminder));
+      reminders.todos.forEach(reminder => renderTodo(reminder));
+      document.querySelector('#totalTodoCount').textContent =
+        reminders.totalTodoCount;
+      document.querySelector('#completedTodoCount').textContent =
+        reminders.completedTodoCount;
+      ('');
     })
     .catch(err => {
       console.error('Error: ', err);
@@ -268,6 +273,7 @@ document.querySelector('#sidebarCategoryList').addEventListener(
     if (e.target.nodeName === 'LI') {
       let categoryId = e.target.dataset.id;
       alert('Seçilen Kategori Kimlik No: ' + categoryId.toString());
+      axios.get(`/api/todos/category/`, { params: { categoryId } }).then(res => { });
     }
   },
   {
