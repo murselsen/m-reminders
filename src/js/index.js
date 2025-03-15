@@ -148,9 +148,9 @@ const renderCategories = () => {
   sidebarCategoryList.innerHTML = '';
 
   axios
-    .get('api/categories/')
+    .get('categories/')
     .then(res => {
-      // console.log('Res: ', res.data);
+      console.log('Api Categroies Res: ', res.data);
       let categories = res.data;
       categories.forEach(category => {
         const categoryItemElement = document.createElement('li');
@@ -199,7 +199,7 @@ const renderCategories = () => {
       });
     })
     .catch(err => {
-      console.error('Error: ', err);
+      console.error('Api Categroies Error: ', err);
       const categoryItemElement = document.createElement('li');
       categoryItemElement.classList.add('categoryItem');
 
@@ -239,8 +239,10 @@ const renderAllTags = () => {
   console.time('renderTags');
 
   document.querySelector('#sidebarTagList').innerHTML = '';
-  axios('api/tags')
+  axios
+    .get('/tags/')
     .then(res => {
+      console.log('Api Tags: ', res);
       let tags = res.data;
       for (let tag of tags) {
         renderTag(tag);
@@ -291,7 +293,7 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
 });
 
 axios
-  .get('api/')
+  .get('/api/')
   .then(res => {
     console.log('Api :', res);
   })

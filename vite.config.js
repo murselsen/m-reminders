@@ -56,6 +56,8 @@ export default defineConfig(({ command }) => {
           changeOrigin: true,
           headers: {
             Connection: 'keep-alive',
+            'Content-Type': 'application/json',
+            
           },
           secure: true,
         },
