@@ -4,6 +4,7 @@ import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
+
 // Export the Vite configuration
 export default defineConfig(({ command, mode }) => {
   return {
@@ -51,7 +52,7 @@ export default defineConfig(({ command, mode }) => {
     // Server configuration
     server: {
       cors: true,
-      port: 3000,
+      port: 5173,
     },
     // Plugins configuration
     plugins: [

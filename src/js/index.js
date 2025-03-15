@@ -120,7 +120,7 @@ const renderReminders = () => {
   const remindersList = document.querySelector('#remindersList');
   remindersList.innerHTML = '';
   axios
-    .get('api/todos')
+    .get('/todos')
     .then(res => {
       console.log('Api Todos: ', res);
       let reminders = res.data;
@@ -129,7 +129,7 @@ const renderReminders = () => {
         reminders.totalTodoCount;
       document.querySelector('#completedTodoCount').textContent =
         reminders.completedTodoCount;
-      ('');
+     
     })
     .catch(err => {
       console.error('Error: ', err);
@@ -145,7 +145,7 @@ const renderCategories = () => {
   sidebarCategoryList.innerHTML = '';
 
   axios
-    .get('categories/')
+    .get('/categories')
     .then(res => {
       let categories = res.data;
       categories.forEach(category => {
