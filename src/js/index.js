@@ -1,8 +1,9 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
 
 console.log('Import Meta: ', import.meta);
 console.log('Import Meta Env: ', import.meta.env);
-axios.defaults.baseURL = import.meta.env.apiUrl;
+axios.defaults.baseURL = dotenv.apiUrl;
 
 console.log('AXIOS keys: ', Object.keys(axios));
 console.log('AXIOS default: ', axios.defaults);
