@@ -50,18 +50,6 @@ export default defineConfig(({ command }) => {
     },
     // Server configuration
     server: {
-      proxy: {
-        api: {
-          target: 'https://api.murselsen.com',
-          changeOrigin: true,
-          headers: {
-            Connection: 'keep-alive',
-            'Content-Type': 'application/json',
-            
-          },
-          secure: true,
-        },
-      },
       cors: true,
       port: 3000,
     },

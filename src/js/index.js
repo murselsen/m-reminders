@@ -148,7 +148,7 @@ const renderCategories = () => {
   sidebarCategoryList.innerHTML = '';
 
   axios
-    .get('categories/')
+    .get('http://api/categories/')
     .then(res => {
       console.log('Api Categroies Res: ', res.data);
       let categories = res.data;
@@ -240,7 +240,7 @@ const renderAllTags = () => {
 
   document.querySelector('#sidebarTagList').innerHTML = '';
   axios
-    .get('/tags/')
+    .get('/api/tags')
     .then(res => {
       console.log('Api Tags: ', res);
       let tags = res.data;
