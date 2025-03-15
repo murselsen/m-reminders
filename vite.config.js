@@ -1,15 +1,16 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
 // Export the Vite configuration
-export default defineConfig(({ command }) => {
+export default defineConfig(({ command, mode }) => {
   return {
     // Define global variables based on the command
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
+      __API_URL__: process.env.apiUrl,
     },
     // Set the root directory for the project
     root: 'src/',

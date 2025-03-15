@@ -1,10 +1,7 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
-
-console.log('Import Meta: ', import.meta);
-console.log('Import Meta Env: ', import.meta.env);
+import viteConfig from '../../vite.config';
 axios.defaults.baseURL = dotenv.apiUrl;
-
+viteConfig.
 console.log('AXIOS keys: ', Object.keys(axios));
 console.log('AXIOS default: ', axios.defaults);
 // const reminder = {
