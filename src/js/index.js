@@ -4,8 +4,8 @@ console.log('Import Meta: ', import.meta);
 console.log('Import Meta Env: ', import.meta.env);
 axios.defaults.baseURL = import.meta.env.apiUrl;
 
-console.log('AXIOS: ', Object.keys(axios));
-console.log('AXIOS: ', axios.defaults);
+console.log('AXIOS keys: ', Object.keys(axios));
+console.log('AXIOS default: ', axios.defaults);
 // const reminder = {
 //   renderAll: renderReminders,
 //   renderItem() {},
