@@ -1,13 +1,6 @@
 import axios from 'axios';
-import viteConfig from '../../vite.config';
-axios.defaults.baseURL = dotenv.apiUrl;
-viteConfig.
-console.log('AXIOS keys: ', Object.keys(axios));
-console.log('AXIOS default: ', axios.defaults);
-// const reminder = {
-//   renderAll: renderReminders,
-//   renderItem() {},
-// };
+axios.defaults.baseURL = 'http://api.murselsen.com';
+
 const renderTodo = reminder => {
   const reminderItemElement = document.createElement('li');
   reminderItemElement.classList.add('reminder-item');

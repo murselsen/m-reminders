@@ -10,7 +10,6 @@ export default defineConfig(({ command, mode }) => {
     // Define global variables based on the command
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
-      __API_URL__: process.env.apiUrl,
     },
     // Set the root directory for the project
     root: 'src/',
