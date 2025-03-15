@@ -1,5 +1,9 @@
 import axios from 'axios';
-
+console.log('AXIOS: ', Object.keys(axios));
+console.log('AXIOS: ', axios.defaults);
+console.log('Import Meta: ', import.meta);
+console.log('Import Meta: ', import
+axios.defaults.baseURL = import.meta.env.apiUrl;
 // const reminder = {
 //   renderAll: renderReminders,
 //   renderItem() {},
@@ -148,7 +152,7 @@ const renderCategories = () => {
   sidebarCategoryList.innerHTML = '';
 
   axios
-    .get('http://api/categories/')
+    .get('categories/')
     .then(res => {
       console.log('Api Categroies Res: ', res.data);
       let categories = res.data;
@@ -240,7 +244,7 @@ const renderAllTags = () => {
 
   document.querySelector('#sidebarTagList').innerHTML = '';
   axios
-    .get('/api/tags')
+    .get('/tags')
     .then(res => {
       console.log('Api Tags: ', res);
       let tags = res.data;
@@ -293,7 +297,7 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
 });
 
 axios
-  .get('/api/')
+  .get('/')
   .then(res => {
     console.log('Api :', res);
   })
