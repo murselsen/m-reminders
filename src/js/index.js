@@ -123,8 +123,9 @@ const renderReminders = () => {
   const remindersList = document.querySelector('#remindersList');
   remindersList.innerHTML = '';
   axios
-    .get('/api/todos')
+    .get('api/todos')
     .then(res => {
+      console.log('Api Todos: ', res);
       let reminders = res.data;
       reminders.todos.forEach(reminder => renderTodo(reminder));
       document.querySelector('#totalTodoCount').textContent =
@@ -147,7 +148,7 @@ const renderCategories = () => {
   sidebarCategoryList.innerHTML = '';
 
   axios
-    .get('/api/categories')
+    .get('api/categories/')
     .then(res => {
       // console.log('Res: ', res.data);
       let categories = res.data;
@@ -238,7 +239,7 @@ const renderAllTags = () => {
   console.time('renderTags');
 
   document.querySelector('#sidebarTagList').innerHTML = '';
-  axios('/api/tags')
+  axios('api/tags')
     .then(res => {
       let tags = res.data;
       for (let tag of tags) {
@@ -273,7 +274,9 @@ document.querySelector('#sidebarCategoryList').addEventListener(
     if (e.target.nodeName === 'LI') {
       let categoryId = e.target.dataset.id;
       alert('Seçilen Kategori Kimlik No: ' + categoryId.toString());
-      axios.get(`/api/todos/category/`, { params: { categoryId } }).then(res => { });
+      axios
+        .get(`api/todos/category/`, { params: { categoryId } })
+        .then(res => {});
     }
   },
   {
@@ -286,3 +289,12 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
   let source = e.target.dataset.source;
   alert('Seçilen Etiket: ' + source);
 });
+
+axios
+  .get('api/')
+  .then(res => {
+    console.log('Api :', res);
+  })
+  .catch(err => {
+    console.error('Api Error: ', err);
+  });

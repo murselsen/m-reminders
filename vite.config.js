@@ -51,13 +51,13 @@ export default defineConfig(({ command }) => {
     // Server configuration
     server: {
       proxy: {
-        '/api': {
-          target: 'http://localhost:3001',
+        api: {
+          target: 'https://api.murselsen.com',
           changeOrigin: true,
           headers: {
             Connection: 'keep-alive',
           },
-          secure: false,
+          secure: true,
         },
       },
       cors: true,
