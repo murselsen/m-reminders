@@ -1,9 +1,11 @@
 import axios from 'axios';
+
+console.log('Import Meta: ', import.meta);
+console.log('Import Meta Env: ', import.meta.env);
+axios.defaults.baseURL = import.meta.env.apiUrl;
+
 console.log('AXIOS: ', Object.keys(axios));
 console.log('AXIOS: ', axios.defaults);
-console.log('Import Meta: ', import.meta);
-console.log('Import Meta: ', import
-axios.defaults.baseURL = import.meta.env.apiUrl;
 // const reminder = {
 //   renderAll: renderReminders,
 //   renderItem() {},
@@ -154,7 +156,6 @@ const renderCategories = () => {
   axios
     .get('categories/')
     .then(res => {
-      console.log('Api Categroies Res: ', res.data);
       let categories = res.data;
       categories.forEach(category => {
         const categoryItemElement = document.createElement('li');
