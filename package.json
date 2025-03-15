@@ -1,9 +1,14 @@
 {
   "name": "m-reminders-clone",
   "private": true,
-  "version": "1.0.705",
+  "version": "1.0.707",
   "type": "module",
   "homepage": "https://murselsen.github.io/m-reminders",
+  "author": "Mürsel ŞEN ",
+  "readme": "README.md",
+  "license": "MIT",
+  "icon": "src/public/favicon.ico",
+  "description": "🚀 m-reminders – Web-based reminder application! This application is a simple and effective tool that allows you to add and manage reminders through the browser. Its modern and minimalist interface makes it easy to keep track of your tasks.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -22,9 +27,6 @@
     "vite": "^5.4.6",
     "concurrently": "^6.2.1"
   },
-  "author": "Mürsel ŞEN ",
-  "readme": "README.md",
-  "license": "MIT",
   "dependencies": {
     "axios": "^1.8.1",
     "express": "^4.17.1",
