@@ -1,5 +1,7 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'https://api.murselsen.com/';
+console.log();
+const mode = process.env.NODE_ENV;
+axios.defaults.baseURL =  mode === '' ?  'https://api.murselsen.com/';
 
 const renderTodo = reminder => {
   const reminderItemElement = document.createElement('li');
@@ -272,7 +274,7 @@ document.querySelector('#sidebarCategoryList').addEventListener(
       let categoryId = e.target.dataset.id;
       alert('Seçilen Kategori Kimlik No: ' + categoryId.toString());
       axios
-        .get(`todos/category/${categoryId.toString()}`, )
+        .get(`todos/category/${categoryId.toString()}`)
         .then(res => {
           console.log('Category Todos: ', res);
         })
