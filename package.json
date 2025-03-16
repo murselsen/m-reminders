@@ -1,7 +1,7 @@
 {
-  "name": "m-reminders-clone",
+  "name": "m-reminders",
   "private": true,
-  "version": "1.0.914",
+  "version": "1.0.935",
   "type": "module",
   "homepage": "https://murselsen.github.io/m-reminders",
   "author": "Mürsel ŞEN ",
@@ -11,14 +11,12 @@
   "description": "🚀 m-reminders – Web-based reminder application! This application is a simple and effective tool that allows you to add and manage reminders through the browser. Its modern and minimalist interface makes it easy to keep track of your tasks.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base:m-reminders",
     "debug": "npm run dev  --inspect",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server/index.js",
-    "client": "vite"
+    "gh": "npm run predeploy && npm run deploy"
   },
   "devDependencies": {
     "concurrently": "^6.2.1",

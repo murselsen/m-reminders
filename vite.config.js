@@ -3,7 +3,8 @@ import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
-
+import packages from './package.json';
+console.log(packages);
 // Export the Vite configuration
 export default defineConfig(({ command, mode }) => {
   return {
@@ -12,12 +13,11 @@ export default defineConfig(({ command, mode }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     // Set the root directory for the project
-
     root: 'src/',
     open: true,
     // Build configuration
     build: {
-      base: '/vite/',
+      base: packages.name,
       sourcemap: true,
       rollupOptions: {
         // Input HTML files for Rollup
