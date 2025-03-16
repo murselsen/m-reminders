@@ -129,7 +129,6 @@ const renderReminders = () => {
   axios
     .get('todos')
     .then(res => {
-      console.log('Api Todos: ', res);
       let reminders = res.data;
       reminders.todos.forEach(reminder => renderTodo(reminder));
       document.querySelector('#totalTodoCount').textContent =
@@ -309,7 +308,8 @@ document.querySelector('#sidebarCategoryList').addEventListener(
       axios
         .get(`todos/category/${categoryId.toString()}`)
         .then(res => {
-          console.log('Category Todos: ', res);
+          const todos = res.data;
+          console.log('Category Todos: ', todos);
         })
         .catch(err => {
           console.error('Category Todos: ', err);
