@@ -310,43 +310,48 @@ document.querySelector('#sidebarCategoryList').addEventListener(
         .then(res => {
           const todos = res.data;
           console.log('Category Todos: ', todos);
+          if (todos.length > 0) {
+            todos.forEach(todo => {
+              console.log(todo);
+            });
+          } else {
+            const remItem = document.createElement('li');
+            remItem.classList.add('reminder-item');
 
-          /*
-          const remItem = document.createElement('li');
-      remItem.classList.add('reminder-item');
+            const remContent = document.createElement('div');
+            remContent.classList.add('remContent');
 
-      const remContent = document.createElement('div');
-      remContent.classList.add('remContent');
+            const remLabel = document.createElement('label');
+            remLabel.classList.add('remCheckbox');
 
-      const remLabel = document.createElement('label');
-      remLabel.classList.add('remCheckbox');
+            const remCheckboxIcon = document.createElement('i');
+            remCheckboxIcon.classList.add(
+              'fa-regular',
+              'fa-times-circle',
+              'fa-2x'
+            );
+            remCheckboxIcon.style.color = 'red';
 
-      const remCheckboxIcon = document.createElement('i');
-      remCheckboxIcon.classList.add('fa-regular', 'fa-times-circle', 'fa-2x');
-      remCheckboxIcon.style.color = 'red';
+            remLabel.appendChild(remCheckboxIcon);
+            remContent.appendChild(remLabel);
 
-      remLabel.appendChild(remCheckboxIcon);
-      remContent.appendChild(remLabel);
+            const remInfo = document.createElement('div');
+            remInfo.classList.add('remInfo');
 
-      const remInfo = document.createElement('div');
-      remInfo.classList.add('remInfo');
+            const infoH4 = document.createElement('h4');
+            infoH4.classList.add('title');
+            infoH4.textContent = "err.message";
+            infoH4.style.color = 'red';
 
-      const infoH4 = document.createElement('h4');
-      infoH4.classList.add('title');
-      infoH4.textContent = err.message;
-      infoH4.style.color = 'red';
+            remInfo.appendChild(infoH4);
 
-      remInfo.appendChild(infoH4);
+            remContent.appendChild(remInfo);
+            remItem.appendChild(remContent);
 
-      remContent.appendChild(remInfo);
-      remItem.appendChild(remContent);
-
-      document.querySelector('#remindersList').style.marginBottom = '20px';
-      document.querySelector('#remindersList').appendChild(remItem); */
-
-          todos.forEach(todo => {
-            console.log(todo);
-          });
+            document.querySelector('#remindersList').style.marginBottom =
+              '20px';
+            document.querySelector('#remindersList').appendChild(remItem);
+          }
         })
         .catch(err => {
           console.error('Category Todos: ', err);
