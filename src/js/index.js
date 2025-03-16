@@ -138,7 +138,7 @@ const renderReminders = () => {
         reminders.completedTodoCount;
     })
     .catch(err => {
-      console.error('Error: ', err);
+      console.error('Api Todos - Error: ', err);
       const remItem = document.createElement('li');
       remItem.classList.add('reminder-item');
 
@@ -146,12 +146,10 @@ const renderReminders = () => {
       remContent.classList.add('remContent');
 
       const remLabel = document.createElement('label');
-      remLabel.setAttribute('for', `rem${reminder.id}`);
       remLabel.classList.add('remCheckbox');
 
       const remCheckboxIcon = document.createElement('i');
       remCheckboxIcon.classList.add('fa-regular', 'fa-times-circle', 'fa-2x');
-      remCheckboxIcon.id = `rem${reminder.id}circle`;
 
       remLabel.appendChild(remCheckboxIcon);
       remContent.appendChild(remLabel);
@@ -159,8 +157,16 @@ const renderReminders = () => {
       const remInfo = document.createElement('div');
       remInfo.classList.add('remInfo');
 
+      const infoH4 = document.createElement('h4');
+      infoH4.classList.add('title');
+      infoH4.textContent = err.message;
+      infoH4.style.color = 'red';
 
-      remItem.appebndChild(remContent);
+      remInfo.appendChild(infoH4);
+
+      remContent.appendChild(remInfo);
+      remItem.appendChild(remContent);
+
       document.querySelector('#remindersList').appendChild(remItem);
     });
 
