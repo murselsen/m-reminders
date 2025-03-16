@@ -311,8 +311,10 @@ document.querySelector('#sidebarCategoryList').addEventListener(
           const todos = res.data;
           console.log('Category Todos: ', todos);
           if (todos.length > 0) {
+            document.querySelector('#remindersList').innerHTML = '';
+
             todos.forEach(todo => {
-              console.log(todo);
+              renderTodo(todo);
             });
           } else {
             const remItem = document.createElement('li');
@@ -327,10 +329,10 @@ document.querySelector('#sidebarCategoryList').addEventListener(
             const remCheckboxIcon = document.createElement('i');
             remCheckboxIcon.classList.add(
               'fa-regular',
-              'fa-times-circle',
+              'fa-warning-circle',
               'fa-2x'
             );
-            remCheckboxIcon.style.color = 'red';
+            remCheckboxIcon.style.color = 'yellow';
 
             remLabel.appendChild(remCheckboxIcon);
             remContent.appendChild(remLabel);
@@ -340,8 +342,8 @@ document.querySelector('#sidebarCategoryList').addEventListener(
 
             const infoH4 = document.createElement('h4');
             infoH4.classList.add('title');
-            infoH4.textContent = "err.message";
-            infoH4.style.color = 'red';
+            infoH4.textContent = 'Kategori ait hiçbir veri bulunamadı !';
+            infoH4.style.color = 'yellow';
 
             remInfo.appendChild(infoH4);
 
