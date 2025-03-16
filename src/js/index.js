@@ -3,7 +3,7 @@ const mode = process.env.NODE_ENV;
 console.log(mode);
 axios.defaults.baseURL =
   mode === 'development'
-    ? 'https://7hd61ctj-3000.euw.devtunnels.mss/'
+    ? 'https://7hd61ctj-3000.euw.devtunnels.ms/'
     : 'https://api.murselsen.com/';
 
 const renderTodo = reminder => {
@@ -150,6 +150,7 @@ const renderReminders = () => {
 
       const remCheckboxIcon = document.createElement('i');
       remCheckboxIcon.classList.add('fa-regular', 'fa-times-circle', 'fa-2x');
+      remCheckboxIcon.style.color = 'red';
 
       remLabel.appendChild(remCheckboxIcon);
       remContent.appendChild(remLabel);
@@ -167,6 +168,7 @@ const renderReminders = () => {
       remContent.appendChild(remInfo);
       remItem.appendChild(remContent);
 
+      document.querySelector('#remindersList').style.marginBottom = '20px';
       document.querySelector('#remindersList').appendChild(remItem);
     });
 
@@ -304,7 +306,6 @@ document.querySelector('#sidebarCategoryList').addEventListener(
     // console.log(e.target.nodeName);
     if (e.target.nodeName === 'LI') {
       let categoryId = e.target.dataset.id;
-      alert('Seçilen Kategori Kimlik No: ' + categoryId.toString());
       axios
         .get(`todos/category/${categoryId.toString()}`)
         .then(res => {
@@ -321,7 +322,6 @@ document.querySelector('#sidebarCategoryList').addEventListener(
 );
 
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
-  // console.log(e.target);
   let source = e.target.dataset.source;
-  alert('Seçilen Etiket: ' + source);
+  console.log('Seçilen Etiket: ' + source);
 });
