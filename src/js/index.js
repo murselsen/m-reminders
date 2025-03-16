@@ -301,15 +301,12 @@ renderAllTags();
 document.querySelector('#sidebarCategoryList').addEventListener(
   'click',
   e => {
-    // console.log(e.target);
-    // console.log(e.target.nodeName);
     if (e.target.nodeName === 'LI') {
       let categoryId = e.target.dataset.id;
       axios
         .get(`todos/category/${categoryId.toString()}`)
         .then(res => {
           const todos = res.data;
-          console.log('Category Todos: ', todos);
           if (todos.length > 0) {
             document.querySelector('#remindersList').innerHTML = '';
 
@@ -317,6 +314,8 @@ document.querySelector('#sidebarCategoryList').addEventListener(
               renderTodo(todo);
             });
           } else {
+            document.querySelector('#remindersList').innerHTML = '';
+
             const remItem = document.createElement('li');
             remItem.classList.add('reminder-item');
 
@@ -328,8 +327,8 @@ document.querySelector('#sidebarCategoryList').addEventListener(
 
             const remCheckboxIcon = document.createElement('i');
             remCheckboxIcon.classList.add(
-              'fa-regular',
-              'fa-warning-circle',
+              'fa-solid',
+              'fa-info-circle',
               'fa-2x'
             );
             remCheckboxIcon.style.color = 'yellow';
@@ -350,6 +349,8 @@ document.querySelector('#sidebarCategoryList').addEventListener(
             remContent.appendChild(remInfo);
             remItem.appendChild(remContent);
 
+            document.querySelector('#remindersList').style.padding = '30px';
+            document.querySelector('#remindersList').style.paddingLeft = '0px';
             document.querySelector('#remindersList').style.marginBottom =
               '20px';
             document.querySelector('#remindersList').appendChild(remItem);
