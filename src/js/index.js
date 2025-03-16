@@ -3,7 +3,7 @@ const mode = process.env.NODE_ENV;
 console.log(mode);
 axios.defaults.baseURL =
   mode === 'development'
-    ? 'https://7hd61ctj-3000.euw.devtunnels.ms/'
+    ? 'https://7hd61ctj-3000.euw.devtunnels.mss/'
     : 'https://api.murselsen.com/';
 
 const renderTodo = reminder => {
@@ -139,8 +139,8 @@ const renderReminders = () => {
     })
     .catch(err => {
       console.error('Error: ', err);
-      const rLi = document.createElement('li');
-      reminderItemElement.classList.add('reminder-item');
+      const remItem = document.createElement('li');
+      remItem.classList.add('reminder-item');
 
       const remContent = document.createElement('div');
       remContent.classList.add('remContent');
@@ -155,9 +155,13 @@ const renderReminders = () => {
 
       remLabel.appendChild(remCheckboxIcon);
       remContent.appendChild(remLabel);
-      rLi.
 
-      document.querySelector('#remindersList').appendChild(rLi);
+      const remInfo = document.createElement('div');
+      remInfo.classList.add('remInfo');
+
+
+      remItem.appebndChild(remContent);
+      document.querySelector('#remindersList').appendChild(remItem);
     });
 
   console.timeEnd('renderReminders');
