@@ -1,5 +1,5 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'http://api.murselsen.com';
+axios.defaults.baseURL = 'https://api.murselsen.com/';
 
 const renderTodo = reminder => {
   const reminderItemElement = document.createElement('li');
@@ -120,7 +120,7 @@ const renderReminders = () => {
   const remindersList = document.querySelector('#remindersList');
   remindersList.innerHTML = '';
   axios
-    .get('/todos')
+    .get('todos')
     .then(res => {
       console.log('Api Todos: ', res);
       let reminders = res.data;
@@ -129,7 +129,6 @@ const renderReminders = () => {
         reminders.totalTodoCount;
       document.querySelector('#completedTodoCount').textContent =
         reminders.completedTodoCount;
-     
     })
     .catch(err => {
       console.error('Error: ', err);
@@ -145,7 +144,7 @@ const renderCategories = () => {
   sidebarCategoryList.innerHTML = '';
 
   axios
-    .get('/categories')
+    .get('categories')
     .then(res => {
       let categories = res.data;
       categories.forEach(category => {
@@ -236,7 +235,7 @@ const renderAllTags = () => {
 
   document.querySelector('#sidebarTagList').innerHTML = '';
   axios
-    .get('/tags')
+    .get('tags')
     .then(res => {
       console.log('Api Tags: ', res);
       let tags = res.data;
@@ -273,8 +272,13 @@ document.querySelector('#sidebarCategoryList').addEventListener(
       let categoryId = e.target.dataset.id;
       alert('Seçilen Kategori Kimlik No: ' + categoryId.toString());
       axios
-        .get(`api/todos/category/`, { params: { categoryId } })
-        .then(res => {});
+        .get(`todos/category/${categoryId.toString()}`, )
+        .then(res => {
+          console.log('Category Todos: ', res);
+        })
+        .catch(err => {
+          console.error('Category Todos: ', err);
+        });
     }
   },
   {
