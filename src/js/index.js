@@ -1,7 +1,10 @@
 import axios from 'axios';
-console.log();
 const mode = process.env.NODE_ENV;
-axios.defaults.baseURL =  mode === '' ?  'https://api.murselsen.com/';
+console.log(mode);
+axios.defaults.baseURL =
+  mode === 'development'
+    ? 'https://7hd61ctj-3000.euw.devtunnels.ms/'
+    : 'https://api.murselsen.com/';
 
 const renderTodo = reminder => {
   const reminderItemElement = document.createElement('li');
@@ -134,12 +137,18 @@ const renderReminders = () => {
     })
     .catch(err => {
       console.error('Error: ', err);
+      const reminderItemElement = document.createElement('li');
+      reminderItemElement.classList.add('reminder-item');
+
+      const remContentElement = document.createElement('div');
+      remContentElement.classList.add('remContent');
     });
 
   console.timeEnd('renderReminders');
 };
 renderReminders();
 
+// Categories
 const renderCategories = () => {
   console.time('renderCategories');
   const sidebarCategoryList = document.querySelector('#sidebarCategoryList');
@@ -213,12 +222,9 @@ const renderCategories = () => {
 
   console.timeEnd('renderCategories');
 };
-
-// Categories
 renderCategories();
 
 // Tag Create
-
 const renderTag = tag => {
   const tagItemElement = document.createElement('li');
   tagItemElement.classList.add('tagItem');
@@ -239,7 +245,7 @@ const renderAllTags = () => {
   axios
     .get('tags')
     .then(res => {
-      console.log('Api Tags: ', res);
+      // console.log('Api Tags: ', res);
       let tags = res.data;
       for (let tag of tags) {
         renderTag(tag);
@@ -268,8 +274,8 @@ renderAllTags();
 document.querySelector('#sidebarCategoryList').addEventListener(
   'click',
   e => {
-    console.log(e.target);
-    console.log(e.target.nodeName);
+    // console.log(e.target);
+    // console.log(e.target.nodeName);
     if (e.target.nodeName === 'LI') {
       let categoryId = e.target.dataset.id;
       alert('Seçilen Kategori Kimlik No: ' + categoryId.toString());
@@ -289,16 +295,7 @@ document.querySelector('#sidebarCategoryList').addEventListener(
 );
 
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
-  console.log(e.target);
+  // console.log(e.target);
   let source = e.target.dataset.source;
   alert('Seçilen Etiket: ' + source);
 });
-
-axios
-  .get('/')
-  .then(res => {
-    console.log('Api :', res);
-  })
-  .catch(err => {
-    console.error('Api Error: ', err);
-  });
