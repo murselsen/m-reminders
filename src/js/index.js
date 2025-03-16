@@ -120,6 +120,8 @@ const renderTodo = reminder => {
 
   document.querySelector('#remindersList').appendChild(reminderItemElement);
 };
+
+// Reminders
 const renderReminders = () => {
   console.time('renderReminders');
   const remindersList = document.querySelector('#remindersList');
@@ -137,11 +139,25 @@ const renderReminders = () => {
     })
     .catch(err => {
       console.error('Error: ', err);
-      const reminderItemElement = document.createElement('li');
+      const rLi = document.createElement('li');
       reminderItemElement.classList.add('reminder-item');
 
-      const remContentElement = document.createElement('div');
-      remContentElement.classList.add('remContent');
+      const remContent = document.createElement('div');
+      remContent.classList.add('remContent');
+
+      const remLabel = document.createElement('label');
+      remLabel.setAttribute('for', `rem${reminder.id}`);
+      remLabel.classList.add('remCheckbox');
+
+      const remCheckboxIcon = document.createElement('i');
+      remCheckboxIcon.classList.add('fa-regular', 'fa-times-circle', 'fa-2x');
+      remCheckboxIcon.id = `rem${reminder.id}circle`;
+
+      remLabel.appendChild(remCheckboxIcon);
+      remContent.appendChild(remLabel);
+      rLi.
+
+      document.querySelector('#remindersList').appendChild(rLi);
     });
 
   console.timeEnd('renderReminders');
