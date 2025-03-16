@@ -4,7 +4,6 @@ import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 import packages from './package.json';
-console.log(packages);
 // Export the Vite configuration
 export default defineConfig(({ command, mode }) => {
   return {
@@ -12,12 +11,12 @@ export default defineConfig(({ command, mode }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
+    base: '/',
     // Set the root directory for the project
     root: 'src/',
     open: true,
     // Build configuration
     build: {
-      base: packages.name,
       sourcemap: true,
       rollupOptions: {
         // Input HTML files for Rollup

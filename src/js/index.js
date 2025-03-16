@@ -371,3 +371,4 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
   let source = e.target.dataset.source;
   console.log('Seçilen Etiket: ' + source);
 });
+fetch()
