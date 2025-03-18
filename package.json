@@ -1,7 +1,7 @@
 {
   "name": "m-reminders",
   "private": true,
-  "version": "1.0.942",
+  "version": "1.0.943",
   "type": "module",
   "homepage": "https://murselsen.github.io/m-reminders",
   "author": "Mürsel ŞEN ",
@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=m-reminders",
-    "debug": "npm run dev  --inspect",
+    "debug": "npm run dev --inspect",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
