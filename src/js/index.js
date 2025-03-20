@@ -303,6 +303,7 @@ document.querySelector('#sidebarCategoryList').addEventListener(
   'click',
   e => {
     if (e.target.nodeName === 'LI') {
+      document.querySelector
       let categoryId = e.target.dataset.id;
       axios
         .get(`todos/category/${categoryId.toString()}`)
@@ -315,10 +316,6 @@ document.querySelector('#sidebarCategoryList').addEventListener(
             todos.forEach(todo => {
               renderTodo(todo);
             });
-
-            document.querySelector('#totalTodoCount').textContent =
-              res.data.totalTodoCount;
-            
           } else {
             document.querySelector('#remindersList').innerHTML = '';
 
@@ -361,6 +358,10 @@ document.querySelector('#sidebarCategoryList').addEventListener(
               '20px';
             document.querySelector('#remindersList').appendChild(remItem);
           }
+          document.querySelector('#totalTodoCount').textContent =
+            res.data.dbTotalTodoCount || 0;
+          document.querySelector('#completedTodoCount').textContent =
+            res.data.dbCompletedTodoCount || 0;
         })
         .catch(err => {
           console.error('Category Todos: ', err);
