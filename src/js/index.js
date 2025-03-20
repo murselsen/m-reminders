@@ -199,12 +199,12 @@ const renderCategories = () => {
   axios
     .get('categories')
     .then(res => {
-      let categories = res.dataç.dbCategories;
-      /* iziToast.info({
+      let categories = res.data.dbCategories;
+      iziToast.info({
         title: 'GET : Başarılı',
-        message: `Yapılacaklar listesine ait <b>${reminders.totalTodoCount}</b> veri geldi !`,
+        message: `Yapılacaklar listesine ait <b>${res.data.totalTodoCount}</b> veri geldi !`,
         position: 'topRight',
-      }); */
+      });
       categories.forEach(category => {
         const categoryItemElement = document.createElement('li');
         categoryItemElement.classList.add('categoryItem');
