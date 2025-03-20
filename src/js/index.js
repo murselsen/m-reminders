@@ -307,7 +307,7 @@ document.querySelector('#sidebarCategoryList').addEventListener(
       axios
         .get(`todos/category/${categoryId.toString()}`)
         .then(res => {
-          const todos = res.data;
+          const todos = res.data.dbTodos;
           if (todos.length > 0) {
             document.querySelector('#remindersList').innerHTML = '';
 
