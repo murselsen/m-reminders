@@ -202,7 +202,7 @@ const renderCategories = () => {
       let categories = res.dbCategories;
       iziToast.info({
         title: 'GET : Başarılı',
-        message: `Yapılacaklar listesine ait <b>${res.dbTotalCategoriesCount}</b> veri geldi !`,
+        message: `Yapılacaklar listesine ait <b>${res.totalCategoriesCount}</b> veri geldi !`,
         position: 'topRight',
       });
       categories.forEach(category => {
