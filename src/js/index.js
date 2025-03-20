@@ -347,14 +347,13 @@ document.querySelector('#sidebarCategoryList').addEventListener(
         .get(`todos/category/${categoryId.toString()}`)
         .then(res => {
           const todos = res.data.dbTodos;
-          console.log('Data: ', res.data);
-           iziToast.success({
-             title: 'GET : Başarılı',
-             message: `${
-               e.target.querySelector('.categoryItem-text').textContent
-             } kategorisine ait <b>${todos.length}</b> veri geldi !`,
-             position: 'topRight',
-           });
+          iziToast.success({
+            title: 'GET : Başarılı',
+            message: `<b>${
+              e.target.querySelector('.categoryItem-text').textContent
+            }</b> kategorisine ait <b>${todos.length}</b> veri geldi !`,
+            position: 'topRight',
+          });
           if (todos.length > 0) {
             document.querySelector('#remindersList').innerHTML = '';
 
