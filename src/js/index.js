@@ -348,6 +348,11 @@ document.querySelector('#sidebarCategoryList').addEventListener(
         .then(res => {
           const todos = res.data.dbTodos;
           console.log('Data: ', res.data);
+           iziToast.success({
+             title: 'GET : Başarılı',
+             message: `${}`,
+             position: 'topRight',
+           });
           if (todos.length > 0) {
             document.querySelector('#remindersList').innerHTML = '';
 
