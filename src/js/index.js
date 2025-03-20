@@ -135,9 +135,9 @@ const renderReminders = () => {
       let reminders = res.data;
       iziToast.info({
         title: 'GET : Başarılı',
-        message: 'Yapılacaklar listesine <b></b>!',
+        message: `Yapılacaklar listesine ait <b>${reminders.totalTodoCount}</b> veri geldi !`,
         position: 'topRight',
-      })
+      });
       reminders.todos.forEach(reminder => renderTodo(reminder));
       document.querySelector('#totalTodoCount').textContent =
         reminders.totalTodoCount;
@@ -180,7 +180,8 @@ const renderReminders = () => {
       iziToast.error({
         title: 'GET : Hata',
         message: err.message,
-        description: 'Yapılacaklar listesi için yapılan istekten veriler getirilemedi !',
+        description:
+          'Yapılacaklar listesi için yapılan istekten veriler getirilemedi !',
         position: 'topRight',
       });
     });
@@ -199,6 +200,11 @@ const renderCategories = () => {
     .get('categories')
     .then(res => {
       let categories = res.data;
+      /* iziToast.info({
+        title: 'GET : Başarılı',
+        message: `Yapılacaklar listesine ait <b>${reminders.totalTodoCount}</b> veri geldi !`,
+        position: 'topRight',
+      }); */
       categories.forEach(category => {
         const categoryItemElement = document.createElement('li');
         categoryItemElement.classList.add('categoryItem');
