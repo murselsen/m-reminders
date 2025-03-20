@@ -135,7 +135,7 @@ const renderReminders = () => {
       let reminders = res.data;
       iziToast.success({
         title: 'GET : Başarılı',
-        message: `Yapılacaklar listesine ait <b>${reminders.totalTodoCount}</b> veri geldi !`,
+        message: `<b>Yapılacaklar</b> listesine ait <b>${reminders.totalTodoCount}</b> veri geldi !`,
         position: 'topRight',
       });
       reminders.todos.forEach(reminder => renderTodo(reminder));
@@ -203,7 +203,7 @@ const renderCategories = () => {
       let categories = res.data.dbCategories;
       iziToast.success({
         title: 'GET : Başarılı',
-        message: `Kategori listesine ait <b>${res.data.totalCategoriesCount}</b> veri geldi !`,
+        message: `<b>Kategoriler</b> listesine ait <b>${res.data.totalCategoriesCount}</b> veri geldi !`,
         position: 'topRight',
       });
       categories.forEach(category => {
