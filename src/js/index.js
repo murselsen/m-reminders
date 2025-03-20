@@ -199,7 +199,7 @@ const renderCategories = () => {
   axios
     .get('categories')
     .then(res => {
-      let categories = res.data;
+      let categories = res.dataç.dbCategories;
       /* iziToast.info({
         title: 'GET : Başarılı',
         message: `Yapılacaklar listesine ait <b>${reminders.totalTodoCount}</b> veri geldi !`,
