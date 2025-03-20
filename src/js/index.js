@@ -308,6 +308,7 @@ document.querySelector('#sidebarCategoryList').addEventListener(
         .get(`todos/category/${categoryId.toString()}`)
         .then(res => {
           const todos = res.data.dbTodos;
+          console.log()
           if (todos.length > 0) {
             document.querySelector('#remindersList').innerHTML = '';
 
