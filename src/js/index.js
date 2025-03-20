@@ -437,6 +437,13 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
       });
       console.log('Tag Todos: ', res);
       document.querySelector('#byCategoryHeader').textContent = '#' + source;
+
+      const todosCount = res.data.totalTodosCount;
+      const completedTodosCount = res.data.completedTodosCount;
+      const todos = res.data.dbTodos;
+      todos.forEach(todo => {
+        renderTodo(todo);
+      });
     })
     .catch(err => {
       console.log('Tag Todos Error: ', err);
