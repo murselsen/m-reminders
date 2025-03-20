@@ -428,6 +428,13 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
   axios
     .get(`todos/tag/${source}`)
     .then(res => {
+      iziToast.success({
+        title: 'GET : Başarılı',
+        message: `<b>#${
+          source.charAt(0).toUpperCase() + source.slice(1)
+        }</b> etiketine ait <b>${res.data.totalTodosCount}</b> veri geldi !`,
+        position: 'topRight',
+      });
       console.log('Tag Todos: ', res);
       document.querySelector('#byCategoryHeader').textContent = '#' + source;
     })
