@@ -321,7 +321,7 @@ const renderAllTags = () => {
       tagItemElement.appendChild(tagItemLinkElement);
       document.querySelector('#sidebarTagList').appendChild(tagItemElement);
       iziToast.error({
-        title: `${err.name} : ${err.code}`,
+        title: `${err.name} : ${err.config.url}`,
         message: err.message,
         description: 'Etiketler için yapılan istekten veriler getirilemedi !',
         position: 'topRight',
@@ -428,7 +428,8 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
   axios
     .get(`todos/tag/${source}`)
     .then(res => {
-      console.log('Tag Todos: ', res.data);
+      console.log('Tag Todos: ', res);
+      document.querySelector('#byCategoryHeader').textContent = '#' + source;
     })
     .catch(err => {
       console.log('Tag Todos Error: ', err);
