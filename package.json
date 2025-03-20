@@ -1,7 +1,7 @@
 {
   "name": "m-reminders",
   "private": true,
-  "version": "1.1.6",
+  "version": "1.1.7",
   "type": "module",
   "homepage": "https://murselsen.github.io/m-reminders",
   "author": "Mürsel ŞEN ",
@@ -30,6 +30,7 @@
     "axios": "^1.8.1",
     "dotenv": "^16.4.7",
     "express": "^4.17.1",
+    "izitoast": "^1.4.0",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }
