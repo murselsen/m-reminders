@@ -133,7 +133,7 @@ const renderReminders = () => {
     .get('todos')
     .then(res => {
       let reminders = res.data;
-      iziToast.info({
+      iziToast.success({
         title: 'GET : Başarılı',
         message: `Yapılacaklar listesine ait <b>${reminders.totalTodoCount}</b> veri geldi !`,
         position: 'topRight',
@@ -199,10 +199,11 @@ const renderCategories = () => {
   axios
     .get('categories')
     .then(res => {
-      let categories = res.dbCategories;
-      iziToast.info({
+      console.log('Api Categories: ', res);
+      let categories = res.data.dbCategories;
+      iziToast.success({
         title: 'GET : Başarılı',
-        message: `Kategori listesine ait <b>${res.totalCategoriesCount}</b> veri geldi !`,
+        message: `Kategori listesine ait <b>${res.data.totalCategoriesCount}</b> veri geldi !`,
         position: 'topRight',
       });
       categories.forEach(category => {
@@ -299,6 +300,11 @@ const renderAllTags = () => {
     .get('tags')
     .then(res => {
       // console.log('Api Tags: ', res);
+       iziToast.success({
+         title: 'GET : Başarılı',
+         message: `Etiket listesine ait <b>${res.data.totalCategoriesCount}</b> veri geldi !`,
+         position: 'topRight',
+       });
       let tags = res.data;
       for (let tag of tags) {
         renderTag(tag);
