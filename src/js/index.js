@@ -308,13 +308,16 @@ document.querySelector('#sidebarCategoryList').addEventListener(
         .get(`todos/category/${categoryId.toString()}`)
         .then(res => {
           const todos = res.data.dbTodos;
-          console.log()
+          console.log('Data: ', res.data);
           if (todos.length > 0) {
             document.querySelector('#remindersList').innerHTML = '';
 
             todos.forEach(todo => {
               renderTodo(todo);
             });
+
+            document.querySelector('#totalTodoCount').textContent =
+
           } else {
             document.querySelector('#remindersList').innerHTML = '';
 
