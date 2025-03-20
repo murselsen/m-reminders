@@ -199,7 +199,6 @@ const renderCategories = () => {
   axios
     .get('categories')
     .then(res => {
-      console.log('Api Categories: ', res);
       let categories = res.data.dbCategories;
       iziToast.success({
         title: 'GET : Başarılı',
@@ -299,7 +298,6 @@ const renderAllTags = () => {
   axios
     .get('tags')
     .then(res => {
-      console.log('Api Tags: ', res);
       iziToast.success({
         title: 'GET : Başarılı',
         message: `<b>Etiket</b> listesine ait <b>${res.data.totalTagsCount}</b> veri geldi !`,
@@ -323,7 +321,7 @@ const renderAllTags = () => {
       tagItemElement.appendChild(tagItemLinkElement);
       document.querySelector('#sidebarTagList').appendChild(tagItemElement);
       iziToast.error({
-        title: 'GET : Hata',
+        title: `${err.name} : ${err.code}`,
         message: err.message,
         description: 'Etiketler için yapılan istekten veriler getirilemedi !',
         position: 'topRight',
@@ -410,7 +408,7 @@ document.querySelector('#sidebarCategoryList').addEventListener(
         .catch(err => {
           console.error('Category Todos: ', err);
           iziToast.error({
-            title: 'GET : Hata',
+            title: `${err.name} : ${err.code}`,
             message: err.message,
             description: 'Kategoriye ait veriler getirilemedi !',
             position: 'topRight',
@@ -435,7 +433,7 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
     .catch(err => {
       console.log('Tag Todos Error: ', err);
       iziToast.error({
-        title: 'GET : Hata',
+        title: `${err.name} : ${err.code}`,
         message: err.message,
         description: 'Etiketlere ait veriler getirilemedi !',
         position: 'topRight',
