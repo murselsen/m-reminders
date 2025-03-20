@@ -299,13 +299,13 @@ const renderAllTags = () => {
   axios
     .get('tags')
     .then(res => {
-      // console.log('Api Tags: ', res);
-       iziToast.success({
-         title: 'GET : Başarılı',
-         message: `Etiket listesine ait <b>${res.data.totalCategoriesCount}</b> veri geldi !`,
-         position: 'topRight',
-       });
-      let tags = res.data;
+      console.log('Api Tags: ', res);
+      iziToast.success({
+        title: 'GET : Başarılı',
+        message: `<b>Etiket</b> listesine ait <b>${res.data.totalTagsCount}</b> veri geldi !`,
+        position: 'topRight',
+      });
+      let tags = res.data.dbTags;
       for (let tag of tags) {
         renderTag(tag);
       }
