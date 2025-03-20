@@ -350,7 +350,9 @@ document.querySelector('#sidebarCategoryList').addEventListener(
           console.log('Data: ', res.data);
            iziToast.success({
              title: 'GET : Başarılı',
-             message: `${}`,
+             message: `${
+               e.target.querySelector('.categoryItem-text').textContent
+             } kategorisine ait <b>${todos.length}</b> veri geldi !`,
              position: 'topRight',
            });
           if (todos.length > 0) {
