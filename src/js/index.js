@@ -1,4 +1,6 @@
 import axios from 'axios';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const mode = process.env.NODE_ENV;
 console.log(mode);
@@ -131,6 +133,11 @@ const renderReminders = () => {
     .get('todos')
     .then(res => {
       let reminders = res.data;
+      iziToast.info({
+        title: 'GET : Başarılı',
+        message: 'Yapılacaklar listesine <b></b>!',
+        position: 'topRight',
+      })
       reminders.todos.forEach(reminder => renderTodo(reminder));
       document.querySelector('#totalTodoCount').textContent =
         reminders.totalTodoCount;
@@ -170,6 +177,12 @@ const renderReminders = () => {
 
       document.querySelector('#remindersList').style.marginBottom = '20px';
       document.querySelector('#remindersList').appendChild(remItem);
+      iziToast.error({
+        title: 'GET : Hata',
+        message: err.message,
+        description: 'Yapılacaklar listesi için yapılan istekten veriler getirilemedi !',
+        position: 'topRight',
+      });
     });
 
   console.timeEnd('renderReminders');
@@ -246,6 +259,12 @@ const renderCategories = () => {
       categoryItemElement.appendChild(categoryTextElement);
 
       sidebarCategoryList.appendChild(categoryItemElement);
+      iziToast.error({
+        title: 'GET : Hata',
+        message: err.message,
+        description: 'Kategoriler için yapılan istekten veriler getirilemedi !',
+        position: 'topRight',
+      });
     });
 
   console.timeEnd('renderCategories');
@@ -291,6 +310,12 @@ const renderAllTags = () => {
 
       tagItemElement.appendChild(tagItemLinkElement);
       document.querySelector('#sidebarTagList').appendChild(tagItemElement);
+      iziToast.error({
+        title: 'GET : Hata',
+        message: err.message,
+        description: 'Etiketler için yapılan istekten veriler getirilemedi !',
+        position: 'topRight',
+      });
     });
   console.timeEnd('renderTags');
 };
@@ -366,6 +391,12 @@ document.querySelector('#sidebarCategoryList').addEventListener(
         })
         .catch(err => {
           console.error('Category Todos: ', err);
+          iziToast.error({
+            title: 'GET : Hata',
+            message: err.message,
+            description: 'Kategoriye ait veriler getirilemedi !',
+            position: 'topRight',
+          });
         });
     }
   },
@@ -377,4 +408,19 @@ document.querySelector('#sidebarCategoryList').addEventListener(
 document.querySelector('#sidebarTagList').addEventListener('click', e => {
   let source = e.target.dataset.source;
   console.log('Seçilen Etiket: ' + source);
+
+  axios
+    .get(`todos/tag/${source}`)
+    .then(res => {
+      console.log('Tag Todos: ', res.data);
+    })
+    .catch(err => {
+      console.log('Tag Todos Error: ', err);
+      iziToast.error({
+        title: 'GET : Hata',
+        message: err.message,
+        description: 'Etiketlere ait veriler getirilemedi !',
+        position: 'topRight',
+      });
+    });
 });
