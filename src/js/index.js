@@ -303,7 +303,8 @@ document.querySelector('#sidebarCategoryList').addEventListener(
   'click',
   e => {
     if (e.target.nodeName === 'LI') {
-      document.querySelector
+      document.querySelector('#byCategoryHeader').textContent =
+        e.target.querySelector('.categoryItem-text').textContent;
       let categoryId = e.target.dataset.id;
       axios
         .get(`todos/category/${categoryId.toString()}`)
