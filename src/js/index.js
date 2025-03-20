@@ -317,7 +317,8 @@ document.querySelector('#sidebarCategoryList').addEventListener(
             });
 
             document.querySelector('#totalTodoCount').textContent =
-
+              res.data.totalTodoCount;
+            
           } else {
             document.querySelector('#remindersList').innerHTML = '';
 
