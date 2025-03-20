@@ -436,11 +436,15 @@ document.querySelector('#sidebarTagList').addEventListener('click', e => {
         position: 'topRight',
       });
       console.log('Tag Todos: ', res);
-      document.querySelector('#byCategoryHeader').textContent = '#' + source;
-
       const todosCount = res.data.totalTodosCount;
       const completedTodosCount = res.data.completedTodosCount;
       const todos = res.data.dbTodos;
+      document.querySelector('#byCategoryHeader').textContent = '#' + source;
+      document.querySelector('#totalTodoCount').textContent = todosCount;
+      document.querySelector('#completedTodoCount').textContent =
+        completedTodosCount;
+      document.querySelector('#remindersList').innerHTML = '';
+
       todos.forEach(todo => {
         renderTodo(todo);
       });
